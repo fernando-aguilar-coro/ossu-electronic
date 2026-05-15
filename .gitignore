@@ -1,0 +1,32 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# testing
+/coverage
+
+# docusaurus
+.docusaurus/
+/build/
+
+# misc
+.DS_Store
+*.pem
+/_dev
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+
+# next.js
+.next/
+
+# typescript
+*.tsbuildinfo
+

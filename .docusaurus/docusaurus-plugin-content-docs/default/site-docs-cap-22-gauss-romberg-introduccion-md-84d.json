@@ -1,0 +1,29 @@
+{
+  "id": "cap22-gauss-romberg/introduccion",
+  "title": "Cuadratura Gaussiana y Método de Romberg",
+  "description": "Extrapolación de Richardson",
+  "source": "@site/docs/cap22-gauss-romberg/introduccion.md",
+  "sourceDirName": "cap22-gauss-romberg",
+  "slug": "/cap22-gauss-romberg/introduccion",
+  "permalink": "/cap22-gauss-romberg/introduccion",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "introduccion",
+    "title": "Cuadratura Gaussiana y Método de Romberg",
+    "sidebar_label": "Introducción",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Gauss y Romberg",
+    "permalink": "/cap22-gauss-romberg"
+  },
+  "next": {
+    "title": "Diferenciación Numérica",
+    "permalink": "/cap23-diferenciacion"
+  }
+}

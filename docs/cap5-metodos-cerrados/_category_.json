@@ -1,0 +1,11 @@
+{
+  "label": "Métodos Cerrados",
+  "position": 2,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Capítulo 5: Métodos Cerrados",
+    "slug": "/cap5",
+    "description": "Técnicas de búsqueda de raíces que requieren un intervalo inicial que encierre la raíz. Incluye el método de bisección y el de falsa posición."
+  }
+}

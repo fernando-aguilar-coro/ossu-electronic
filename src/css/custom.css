@@ -1,0 +1,107 @@
+/**
+ * custom.css  —  Global design tokens
+ * Paleta: Índigo + Esmeralda (dark-first)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ── Light mode tokens ──────────────────────────────────────────────────────── */
+:root {
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Courier New', monospace;
+
+  --ifm-color-primary: #4f46e5;
+  --ifm-color-primary-dark: #4338ca;
+  --ifm-color-primary-darker: #3730a3;
+  --ifm-color-primary-darkest: #312e81;
+  --ifm-color-primary-light: #6366f1;
+  --ifm-color-primary-lighter: #818cf8;
+  --ifm-color-primary-lightest: #a5b4fc;
+
+  --ifm-code-font-size: 93%;
+  --ifm-border-radius: 10px;
+  --ifm-global-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(79, 70, 229, 0.08);
+}
+
+/* ── Dark mode tokens ───────────────────────────────────────────────────────── */
+[data-theme='dark'] {
+  --ifm-color-primary: #818cf8;
+  --ifm-color-primary-dark: #6366f1;
+  --ifm-color-primary-darker: #4f46e5;
+  --ifm-color-primary-darkest: #4338ca;
+  --ifm-color-primary-light: #a5b4fc;
+  --ifm-color-primary-lighter: #c7d2fe;
+  --ifm-color-primary-lightest: #e0e7ff;
+
+  --ifm-background-color: #060d1a;
+  --ifm-background-surface-color: #0f1f3d;
+  --ifm-navbar-background-color: rgba(6, 13, 26, 0.85);
+  --ifm-toc-border-color: rgba(99, 102, 241, 0.2);
+  --ifm-hr-border-color: rgba(99, 102, 241, 0.15);
+  --docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.15);
+}
+
+/* ── Navbar ─────────────────────────────────────────────────────────────────── */
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(6, 13, 26, 0.85) !important;
+}
+
+/* ── Sidebar ────────────────────────────────────────────────────────────────── */
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background: #080f20;
+  border-right: 1px solid rgba(99, 102, 241, 0.12);
+}
+
+/* ── Headings ───────────────────────────────────────────────────────────────── */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3 {
+  color: #f1f5f9;
+}
+
+/* ── Code blocks ────────────────────────────────────────────────────────────── */
+[data-theme='dark'] code {
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 5px;
+}
+
+/* ── Tables ─────────────────────────────────────────────────────────────────── */
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+[data-theme='dark'] table th {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+}
+
+[data-theme='dark'] table tr:nth-child(even) {
+  background: rgba(99, 102, 241, 0.04);
+}
+
+/* ── Admonitions ─────────────────────────────────────────────────────────────── */
+[data-theme='dark'] .alert {
+  border-radius: 10px;
+  border-left-width: 3px;
+}
+
+/* ── Scrollbar (dark) ───────────────────────────────────────────────────────── */
+[data-theme='dark'] ::-webkit-scrollbar { width: 7px; height: 7px; }
+[data-theme='dark'] ::-webkit-scrollbar-track { background: #060d1a; }
+[data-theme='dark'] ::-webkit-scrollbar-thumb { background: #1e3a5f; border-radius: 99px; }
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
+
+/* Hide specific sidebar items */
+.menu__list-item.hidden {
+  display: none;
+}
+

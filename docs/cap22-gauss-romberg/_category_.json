@@ -1,0 +1,10 @@
+{
+  "label": "Gauss y Romberg",
+  "position": 22,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Capítulo 22: Cuadratura Gaussiana y Romberg",
+    "slug": "/cap22-gauss-romberg"
+  }
+}

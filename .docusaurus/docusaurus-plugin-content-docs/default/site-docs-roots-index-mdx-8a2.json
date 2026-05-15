@@ -1,0 +1,19 @@
+{
+  "id": "roots/index",
+  "title": "Raíces de Ecuaciones",
+  "description": "Encontrar las raíces (o ceros) de una función es uno de los problemas más antiguos y comunes en el análisis numérico.",
+  "source": "@site/docs/roots/index.mdx",
+  "sourceDirName": "roots",
+  "slug": "/roots/",
+  "permalink": "/roots/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Sistemas Lineales",
+    "permalink": "/linear-systems/"
+  }
+}

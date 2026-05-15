@@ -1,0 +1,23 @@
+{
+  "id": "fundamentals/roundoff-errors/index",
+  "title": "Aproximaciones y Errores de Redondeo",
+  "description": "En el cálculo numérico, casi nunca obtenemos una solución exacta. Es fundamental comprender la naturaleza de los errores para evaluar la confiabilidad de nuestros resultados.",
+  "source": "@site/docs/fundamentals/roundoff-errors/index.mdx",
+  "sourceDirName": "fundamentals/roundoff-errors",
+  "slug": "/fundamentals/roundoff-errors/",
+  "permalink": "/fundamentals/roundoff-errors/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Programación y Software",
+    "permalink": "/fundamentals/programming-software/"
+  },
+  "next": {
+    "title": "La Serie de Taylor y Errores de Truncamiento",
+    "permalink": "/fundamentals/taylor-series/"
+  }
+}

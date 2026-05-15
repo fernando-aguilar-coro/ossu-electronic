@@ -1,0 +1,23 @@
+{
+  "id": "fundamentals/mathematical-models/index",
+  "title": "Modelos Matemáticos y Solución de Problemas en Ingeniería",
+  "description": "Los modelos matemáticos son representaciones simplificadas de sistemas reales que permiten analizar su comportamiento y predecir resultados. En la ingeniería, estos modelos suelen tomar la forma de ecuaciones que relacionan variables dependientes, variables independientes, parámetros y funciones de fuerza.",
+  "source": "@site/docs/fundamentals/mathematical-models/index.mdx",
+  "sourceDirName": "fundamentals/mathematical-models",
+  "slug": "/fundamentals/mathematical-models/",
+  "permalink": "/fundamentals/mathematical-models/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Fundamentos y Errores",
+    "permalink": "/fundamentals/"
+  },
+  "next": {
+    "title": "Programación y Software",
+    "permalink": "/fundamentals/programming-software/"
+  }
+}

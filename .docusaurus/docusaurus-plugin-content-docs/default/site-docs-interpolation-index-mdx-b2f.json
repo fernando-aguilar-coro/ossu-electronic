@@ -1,0 +1,23 @@
+{
+  "id": "interpolation/index",
+  "title": "Interpolaci�n",
+  "description": "",
+  "source": "@site/docs/interpolation/index.mdx",
+  "sourceDirName": "interpolation",
+  "slug": "/interpolation/",
+  "permalink": "/interpolation/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Integraci�n",
+    "permalink": "/integration/"
+  },
+  "next": {
+    "title": "Sistemas Lineales",
+    "permalink": "/linear-systems/"
+  }
+}

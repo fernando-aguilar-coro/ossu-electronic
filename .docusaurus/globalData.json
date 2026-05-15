@@ -1,0 +1,268 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "cap1-modelos-matematicos/introduccion",
+              "path": "/cap1-modelos-matematicos/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap10-lu/introduccion",
+              "path": "/cap10-lu/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap11-gauss-seidel/introduccion",
+              "path": "/cap11-gauss-seidel/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap12-casos-lineales/introduccion",
+              "path": "/cap12-casos-lineales/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap13-optimizacion-1d/introduccion",
+              "path": "/cap13-optimizacion-1d/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap15-prog-lineal/introduccion",
+              "path": "/cap15-prog-lineal/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap17-regresion/introduccion",
+              "path": "/cap17-regresion/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap18-interpolacion/introduccion",
+              "path": "/cap18-interpolacion/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap19-fourier/introduccion",
+              "path": "/cap19-fourier/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap2-programacion/introduccion",
+              "path": "/cap2-programacion/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap21-newton-cotes/introduccion",
+              "path": "/cap21-newton-cotes/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap22-gauss-romberg/introduccion",
+              "path": "/cap22-gauss-romberg/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap23-diferenciacion/introduccion",
+              "path": "/cap23-diferenciacion/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap25-runge-kutta/introduccion",
+              "path": "/cap25-runge-kutta/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap27-bvp/introduccion",
+              "path": "/cap27-bvp/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap3-errores/introduccion",
+              "path": "/cap3-errores/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap4-taylor/introduccion",
+              "path": "/cap4-taylor/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap5-metodos-cerrados/biseccion",
+              "path": "/cap5-metodos-cerrados/biseccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap5-metodos-cerrados/comparativa",
+              "path": "/cap5-metodos-cerrados/comparativa",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap5-metodos-cerrados/falsa-posicion",
+              "path": "/cap5-metodos-cerrados/falsa-posicion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap5-metodos-cerrados/introduccion",
+              "path": "/cap5-metodos-cerrados/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap6-metodos-abiertos/introduccion",
+              "path": "/cap6-metodos-abiertos/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap7-raices-polinomios/introduccion",
+              "path": "/cap7-raices-polinomios/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap8-casos-raices/introduccion",
+              "path": "/cap8-casos-raices/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "cap9-gauss/introduccion",
+              "path": "/cap9-gauss/introduccion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap1-modelos-matematicos",
+              "path": "/cap1-modelos-matematicos",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap2-programacion",
+              "path": "/cap2-programacion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap5",
+              "path": "/cap5",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap3-errores",
+              "path": "/cap3-errores",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap4-taylor",
+              "path": "/cap4-taylor",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap6-metodos-abiertos",
+              "path": "/cap6-metodos-abiertos",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap7-raices-polinomios",
+              "path": "/cap7-raices-polinomios",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap8-casos-raices",
+              "path": "/cap8-casos-raices",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap9-gauss",
+              "path": "/cap9-gauss",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap10-lu",
+              "path": "/cap10-lu",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap11-gauss-seidel",
+              "path": "/cap11-gauss-seidel",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap12-casos-lineales",
+              "path": "/cap12-casos-lineales",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap13-optimizacion-1d",
+              "path": "/cap13-optimizacion-1d",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap15-prog-lineal",
+              "path": "/cap15-prog-lineal",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap17-regresion",
+              "path": "/cap17-regresion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap18-interpolacion",
+              "path": "/cap18-interpolacion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap19-fourier",
+              "path": "/cap19-fourier",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap21-newton-cotes",
+              "path": "/cap21-newton-cotes",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap22-gauss-romberg",
+              "path": "/cap22-gauss-romberg",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap23-diferenciacion",
+              "path": "/cap23-diferenciacion",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap25-runge-kutta",
+              "path": "/cap25-runge-kutta",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/cap27-bvp",
+              "path": "/cap27-bvp",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/intro",
+                "label": "Introducción"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

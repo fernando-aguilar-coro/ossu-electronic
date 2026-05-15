@@ -1,0 +1,23 @@
+{
+  "id": "fundamentals/programming-software/index",
+  "title": "Programación y Software",
+  "description": "El desarrollo de métodos numéricos requiere herramientas computacionales para realizar cálculos repetitivos de manera eficiente. Este capítulo explora las bases de la programación aplicadas al cálculo numérico.",
+  "source": "@site/docs/fundamentals/programming-software/index.mdx",
+  "sourceDirName": "fundamentals/programming-software",
+  "slug": "/fundamentals/programming-software/",
+  "permalink": "/fundamentals/programming-software/",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Modelos Matemáticos y Solución de Problemas en Ingeniería",
+    "permalink": "/fundamentals/mathematical-models/"
+  },
+  "next": {
+    "title": "Aproximaciones y Errores de Redondeo",
+    "permalink": "/fundamentals/roundoff-errors/"
+  }
+}

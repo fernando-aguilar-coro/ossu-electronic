@@ -1,0 +1,139 @@
+---
+id: comparativa
+title: Comparativa y Criterios de Selección
+sidebar_label: Comparativa
+sidebar_position: 4
+---
+
+# Comparativa: Bisección vs Falsa Posición
+
+## Resumen de propiedades
+
+| Propiedad | Bisección | Falsa Posición |
+|---|:---:|:---:|
+| **Garantía de convergencia** | ✅ Siempre | ✅ Siempre |
+| **Tipo de convergencia** | Lineal ($r = 0.5$) | Superlineal (aprox.) |
+| **Velocidad típica** | Más lenta | Más rápida |
+| **Casos donde puede ser lenta** | Siempre igual | Funciones muy curvas |
+| **Simplicidad de implementación** | Alta | Alta |
+| **Requiere derivada** | ❌ No | ❌ No |
+| **Robusto ante discontinuidades** | ✅ Sí | ✅ Sí |
+
+---
+
+## Error y convergencia
+
+### Bisección
+
+El error está **acotado exactamente** en cada iteración:
+
+$$
+E_n \leq \frac{b - a}{2^n}
+$$
+
+Reducción del error por iteración: exactamente $50\%$.
+
+### Falsa Posición
+
+La convergencia depende de la curvatura de $f$:
+
+- Para funciones casi lineales: converge muy rápido (pocas iteraciones).
+- Para funciones con alta curvatura: puede converger más lento que bisección.
+
+No hay cota simple del error como en bisección, pero el **error aproximado** $\varepsilon_a$ sigue siendo el criterio de parada.
+
+---
+
+## ¿Cuándo usar cada método?
+
+```
+¿La función es continua y tengo un intervalo con cambio de signo?
+├── Sí → Métodos cerrados (seguros)
+│   ├── ¿Necesito número exacto de iteraciones / cota de error garantizada?
+│   │   └── Sí → BISECCIÓN
+│   └── ¿Prefiero convergencia rápida y la función es suave?
+│       └── Sí → FALSA POSICIÓN
+└── No → Considerar métodos abiertos (Newton-Raphson, Secante)
+```
+
+---
+
+## Ejemplo comparativo
+
+Para $f(x) = \sin(10x) + \cos(3x)$ en $[0, 0.5]$ con $\varepsilon_s = 0.01\%$:
+
+| Método | Iteraciones hasta converger |
+|---|:---:|
+| Bisección | ~14 |
+| Falsa posición | ~6 |
+
+Para $f(x) = x^{10} - 1$ en $[0, 1.5]$:
+
+| Método | Iteraciones hasta converger |
+|---|:---:|
+| Bisección | ~15 |
+| Falsa posición | >50 (estancamiento) |
+
+---
+
+## Código comparativo
+
+```python
+import math
+
+def biseccion(f, xl, xu, es=1e-6, imax=100):
+    xr_ant = xl
+    for i in range(1, imax + 1):
+        xr = (xl + xu) / 2
+        ea = abs((xr - xr_ant) / xr) * 100 if xr != 0 else 100
+        if f(xl) * f(xr) < 0:
+            xu = xr
+        elif f(xl) * f(xr) > 0:
+            xl = xr
+        else:
+            return xr, i
+        xr_ant = xr
+        if ea < es:
+            return xr, i
+    return xr, imax
+
+def falsa_posicion(f, xl, xu, es=1e-6, imax=100):
+    xr_ant = xl
+    for i in range(1, imax + 1):
+        xr = xu - f(xu) * (xu - xl) / (f(xu) - f(xl))
+        ea = abs((xr - xr_ant) / xr) * 100 if xr != 0 else 100
+        if f(xl) * f(xr) < 0:
+            xu = xr
+        elif f(xl) * f(xr) > 0:
+            xl = xr
+        else:
+            return xr, i
+        xr_ant = xr
+        if ea < es:
+            return xr, i
+    return xr, imax
+
+# --- Comparar en f(x) = e^(-x) - x ---
+f = lambda x: math.exp(-x) - x
+
+raiz_b, iter_b = biseccion(f, 0, 1)
+raiz_fp, iter_fp = falsa_posicion(f, 0, 1)
+
+print(f"Bisección:       raíz = {raiz_b:.8f}, iteraciones = {iter_b}")
+print(f"Falsa posición:  raíz = {raiz_fp:.8f}, iteraciones = {iter_fp}")
+```
+
+---
+
+## Notas finales del capítulo
+
+1. Ambos métodos son seguros y simples de implementar.
+2. La elección entre ellos depende del comportamiento de $f$ en el intervalo.
+3. Si ninguno converge rápido, considerar los **métodos abiertos** (Capítulo 6).
+4. Siempre **graficar la función** antes de aplicar cualquier método numérico.
+
+:::tip Flujo de trabajo recomendado
+1. Identificar un intervalo $[a, b]$ con $f(a) \cdot f(b) < 0$ (puede ayudar una gráfica).
+2. Comenzar con bisección para asegurarse de que el método converge.
+3. Si la convergencia es lenta, cambiar a falsa posición o métodos abiertos.
+:::

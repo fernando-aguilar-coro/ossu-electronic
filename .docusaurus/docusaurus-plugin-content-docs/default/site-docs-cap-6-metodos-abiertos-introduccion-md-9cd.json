@@ -1,0 +1,29 @@
+{
+  "id": "cap6-metodos-abiertos/introduccion",
+  "title": "Métodos Abiertos (Newton-Raphson, Secante, Punto Fijo)",
+  "description": "¿Qué son los métodos abiertos?",
+  "source": "@site/docs/cap6-metodos-abiertos/introduccion.md",
+  "sourceDirName": "cap6-metodos-abiertos",
+  "slug": "/cap6-metodos-abiertos/introduccion",
+  "permalink": "/cap6-metodos-abiertos/introduccion",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "id": "introduccion",
+    "title": "Métodos Abiertos (Newton-Raphson, Secante, Punto Fijo)",
+    "sidebar_label": "Introducción",
+    "sidebar_position": 1
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Métodos Abiertos",
+    "permalink": "/cap6-metodos-abiertos"
+  },
+  "next": {
+    "title": "Raíces de Polinomios",
+    "permalink": "/cap7-raices-polinomios"
+  }
+}

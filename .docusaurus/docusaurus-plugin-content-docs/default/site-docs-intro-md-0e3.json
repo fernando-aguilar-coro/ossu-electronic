@@ -1,0 +1,25 @@
+{
+  "id": "intro",
+  "title": "Introducción a los Métodos Numéricos",
+  "description": "Los métodos numéricos son técnicas mediante las cuales es posible formular problemas matemáticos de tal forma que puedan resolverse usando operaciones aritméticas. Aunque existen muchos tipos de métodos numéricos, todos comparten una característica común: invariablemente requieren un gran número de cálculos aritméticos tediosos.",
+  "source": "@site/docs/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/intro",
+  "draft": false,
+  "unlisted": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 0,
+  "frontMatter": {
+    "id": "intro",
+    "title": "Introducción a los Métodos Numéricos",
+    "sidebar_label": "Introducción",
+    "sidebar_position": 0
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Modelos Matemáticos",
+    "permalink": "/cap1-modelos-matematicos"
+  }
+}
