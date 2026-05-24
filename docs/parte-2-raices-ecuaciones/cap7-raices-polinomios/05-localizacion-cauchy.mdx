@@ -1,0 +1,50 @@
+---
+id: localizacion-cauchy
+title: Límites de Cauchy para Raíces
+sidebar_label: Límites de Cauchy
+sidebar_position: 5
+---
+
+# Límites de Cauchy para la Localización de Raíces
+
+Encontrar estimaciones iniciales adecuadas es fundamental para evitar la divergencia en los métodos polinomiales. Para ello, existen teoremas que nos permiten acotar el dominio del plano complejo donde residen las raíces.
+
+---
+
+## 1. El Círculo de Búsqueda de Cauchy
+
+Para cualquier polinomio complejo de la forma $P_n(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_0$, todas sus raíces (tanto reales como complejas) se encuentran contenidas estrictamente dentro del disco cerrado en el plano complejo centrado en el origen con radio $R_C$:
+
+$$
+|x| \leq R_C = 1 + \frac{\max\big(|a_0|, |a_1|, \ldots, |a_{n-1}|\big)}{|a_n|}
+$$
+
+---
+
+## 2. Flujo de Trabajo General para Polinomios
+
+Para resolver eficientemente un polinomio sin conocimiento previo de sus ceros, se recomienda seguir el siguiente procedimiento sistemático:
+
+```mermaid
+graph TD
+    A[Polinomio P_n] --> B[Calcular Límite de Cauchy R_C]
+    B --> C[Graficar en la región [-R_C, R_C]]
+    C --> D{¿Hay raíces reales visibles?}
+    D -- Sí --> E[Aplicar Newton-Raphson + Deflación de Horner]
+    D -- No --> F[Aplicar Müller o Bairstow para raíces complejas]
+    E --> G[Refinar todas las raíces en el Polinomio Original]
+    F --> G
+    G --> H[Verificar que el producto coincida con a_0/a_n]
+```
+
+---
+
+## 3. Ejemplo de Acotación
+
+Para el polinomio $P(x) = x^4 - 2x^3 - 11x^2 + 12x + 36$:
+- Coeficiente principal: $a_4 = 1$.
+- Máximo de coeficientes restantes: $\max(|36|, |12|, |-11|, |-2|) = 36$.
+- Límite de Cauchy:
+  $$|x| \leq 1 + \frac{36}{1} = 37$$
+
+Esto garantiza que absolutamente todas las raíces del polinomio están contenidas en el intervalo $[-37, 37]$ del eje real, o bien en el círculo de radio 37 en el plano complejo, acotando el problema de búsqueda de manera segura.

@@ -1,0 +1,48 @@
+---
+id: viga-vibracion
+title: "Caso 5: Ecuación Característica de una Viga"
+sidebar_label: "5. Vibración de Vigas"
+sidebar_position: 5
+---
+
+# Caso 5: Raíces de la Ecuación Característica de una Viga
+
+## 1. Planteamiento del Problema
+
+En análisis estructural e ingeniería aeroespacial, el estudio de las vibraciones mecánicas de una viga biempotrada libre de fuerzas externas permite determinar sus frecuencias naturales de oscilación. 
+
+Las soluciones matemáticas del modelo diferencial de Euler-Bernoulli indican que los valores propios característicos $\lambda_n$ satisfacen la siguiente ecuación trascendente no lineal:
+
+$$
+\cosh(\lambda L) \cos(\lambda L) = 1
+$$
+
+Donde $L$ representa la longitud total de la viga.
+
+---
+
+## 2. Objetivo de Ingeniería
+
+Calcular los primeros tres valores de $\lambda_n L$ que satisfacen la ecuación característica, los cuales determinan directamente los tres primeros **modos de vibración** de la viga y sus frecuencias naturales de oscilación:
+
+$$
+f(\lambda) = \cosh(\lambda L) \cos(\lambda L) - 1 = 0
+$$
+
+---
+
+## 3. Resolución Numérica
+
+Debido al carácter oscilatorio del coseno y el crecimiento exponencial del coseno hiperbólico, la función posee infinitas raíces discretas. Para localizarlas de manera segura, se emplea un análisis gráfico seguido del método de **Bisección** o **Newton-Raphson** acotado:
+
+### Primeros tres modos de vibración calculados:
+- **Modo 1**: 
+  $$\lambda_1 L \approx 4.7300$$
+- **Modo 2**: 
+  $$\lambda_2 L \approx 7.8532$$
+- **Modo 3**: 
+  $$\lambda_3 L \approx 10.9956$$
+
+:::tip Importancia en Diseño
+Calcular estas raíces con alta precisión decimal evita fenómenos destructivos de **resonancia mecánica** al diseñar puentes, edificios y alas de aeronaves sometidas a cargas dinámicas periódicas (como ráfagas de viento o sismos).
+:::

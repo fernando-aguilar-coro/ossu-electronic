@@ -1,0 +1,61 @@
+---
+id: metodo-muller
+title: Método de Müller
+sidebar_label: Método de Müller
+sidebar_position: 3
+---
+
+# Método de Müller
+
+El método de **Müller** es una generalización del método de la secante. Mientras que el método de la secante traza una línea recta (polinomio de primer grado) a través de dos puntos para proyectar la raíz, el método de Müller ajusta una **parábola** (polinomio de segundo grado) a través de **tres puntos**.
+
+---
+
+## 1. Fundamento Geométrico y Analítico
+
+Al aproximar la función localmente mediante una parábola $a(x - x_2)^2 + b(x - x_2) + c$, el método puede intersectar el eje $x$ incluso si la función tiene valores complejos. Esto le permite al método de Müller **localizar raíces reales y complejas por igual**.
+
+---
+
+## 2. Ecuaciones del Algoritmo
+
+Dados tres puntos de iteración previos $x_0$, $x_1$ y $x_2$, se calculan las diferencias de la forma:
+
+$$
+h_0 = x_1 - x_0, \quad h_1 = x_2 - x_1
+$$
+
+$$
+\delta_0 = \frac{f(x_1) - f(x_0)}{h_0}, \quad \text{y} \quad \delta_1 = \frac{f(x_2) - f(x_1)}{h_1}
+$$
+
+Los coeficientes de la parábola se determinan como:
+
+$$
+a = \frac{\delta_1 - \delta_0}{h_1 + h_0}
+$$
+
+$$
+b = a \cdot h_1 + \delta_1
+$$
+
+$$
+c = f(x_2)
+$$
+
+Para calcular la siguiente estimación $x_3$, se aplica la versión modificada de la fórmula cuadrática (para evitar errores por resta de números cercanos):
+
+$$
+\boxed{x_3 = x_2 - \frac{2c}{b \pm \sqrt{b^2 - 4ac}}}
+$$
+
+Donde el signo del denominador ($+$ o $-$) se elige de manera que coincida con el signo de $b$, maximizando así la magnitud del denominador y reduciendo el error de truncamiento numérico.
+
+---
+
+## 3. Velocidad de Convergencia
+
+El método de Müller tiene un excelente desempeño iterativo:
+
+- **Orden de convergencia**: $r \approx 1.839$ (convergencia casi cuadrática).
+- **Ventaja crítica**: Al resolver la raíz de una parábola, si el discriminante $b^2 - 4ac$ es negativo, el método **genera automáticamente números complejos**, permitiendo hallar raíces complejas conjugadas de manera directa.

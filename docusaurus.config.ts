@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
@@ -53,10 +53,10 @@ const config: Config = {
 
   stylesheets: [
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
       type: 'text/css',
       integrity:
-        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQWSiLPNhNzmWYTdM1G98HQVG+0zUMRjnO3adPcV',
+        'sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV',
       crossorigin: 'anonymous',
     },
   ],
@@ -77,8 +77,8 @@ const config: Config = {
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Documentación',
+          position: 'right',
+          label: 'Leer más ...',
         },
       ],
     },

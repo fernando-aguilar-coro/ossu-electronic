@@ -1,0 +1,45 @@
+---
+id: cable-colgante
+title: "Caso 3: Diseño de un Cable de Puente Colgante"
+sidebar_label: "3. Cable de Puente"
+sidebar_position: 3
+---
+
+# Caso 3: Diseño de un Cable de Puente Colgante
+
+## 1. Planteamiento del Problema
+
+La forma que adquiere un cable flexible suspendido bajo la acción de su propio peso uniforme suspendido entre dos torres fijas es descrita matemáticamente por una curva conocida como **catenaria**:
+
+$$
+y(x) = a \cosh\!\left(\frac{x}{a}\right) - a + y_0
+$$
+
+Donde $a$ es un parámetro físico adimensional que representa la relación entre la tensión horizontal del cable y su peso por unidad de longitud ($T_0 / w$).
+
+---
+
+## 2. Objetivo de Ingeniería
+
+Determinar el parámetro de diseño del cable $a$ para que satisfaga las restricciones geométricas impuestas por la catenaria bajo una longitud horizontal del puente $L$ y una flecha máxima de pandeo $D$:
+
+$$
+f(a) = a \cosh\!\left(\frac{L}{2a}\right) - a - D = 0
+$$
+
+---
+
+## 3. Resolución Numérica
+
+Para un puente con luz horizontal $L = 500\,\text{m}$ y una flecha permitida $D = 50\,\text{m}$:
+
+$$
+f(a) = a \cosh\!\left(\frac{250}{a}\right) - a - 50 = 0
+$$
+
+- **Método**: Se aplica el método de **Newton-Raphson** o la **Secante**.
+- **Resultado**: El parámetro óptimo de tensión converge a:
+
+$$
+a \approx 628.32
+$$

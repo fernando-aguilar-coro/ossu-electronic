@@ -3,41 +3,6 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '5ff'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '5ba'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', 'a2b'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', 'c3c'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '156'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', '88c'),
-    exact: true
-  },
-  {
-    path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', '000'),
-    exact: true
-  },
-  {
     path: '/markdown-page',
     component: ComponentCreator('/markdown-page', '53a'),
     exact: true
@@ -49,220 +14,16 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '7be'),
+    component: ComponentCreator('/', '7a8'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', '84f'),
+        component: ComponentCreator('/', 'cb8'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '0ee'),
+            component: ComponentCreator('/', '605'),
             routes: [
-              {
-                path: '/cap1-modelos-matematicos',
-                component: ComponentCreator('/cap1-modelos-matematicos', 'ca0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap1-modelos-matematicos/introduccion',
-                component: ComponentCreator('/cap1-modelos-matematicos/introduccion', 'e4d'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap10-lu',
-                component: ComponentCreator('/cap10-lu', '5af'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap10-lu/introduccion',
-                component: ComponentCreator('/cap10-lu/introduccion', 'fdf'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap11-gauss-seidel',
-                component: ComponentCreator('/cap11-gauss-seidel', '9fb'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap11-gauss-seidel/introduccion',
-                component: ComponentCreator('/cap11-gauss-seidel/introduccion', 'f2e'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap12-casos-lineales',
-                component: ComponentCreator('/cap12-casos-lineales', '794'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap12-casos-lineales/introduccion',
-                component: ComponentCreator('/cap12-casos-lineales/introduccion', '2a1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap13-optimizacion-1d',
-                component: ComponentCreator('/cap13-optimizacion-1d', 'cbd'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap13-optimizacion-1d/introduccion',
-                component: ComponentCreator('/cap13-optimizacion-1d/introduccion', '697'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap15-prog-lineal',
-                component: ComponentCreator('/cap15-prog-lineal', '517'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap15-prog-lineal/introduccion',
-                component: ComponentCreator('/cap15-prog-lineal/introduccion', 'd84'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap17-regresion',
-                component: ComponentCreator('/cap17-regresion', 'd1a'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap17-regresion/introduccion',
-                component: ComponentCreator('/cap17-regresion/introduccion', '6ad'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap18-interpolacion',
-                component: ComponentCreator('/cap18-interpolacion', '7d1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap18-interpolacion/introduccion',
-                component: ComponentCreator('/cap18-interpolacion/introduccion', '7e4'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap19-fourier',
-                component: ComponentCreator('/cap19-fourier', '623'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap19-fourier/introduccion',
-                component: ComponentCreator('/cap19-fourier/introduccion', 'fd6'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap2-programacion',
-                component: ComponentCreator('/cap2-programacion', '518'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap2-programacion/introduccion',
-                component: ComponentCreator('/cap2-programacion/introduccion', 'db1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap21-newton-cotes',
-                component: ComponentCreator('/cap21-newton-cotes', '9b0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap21-newton-cotes/introduccion',
-                component: ComponentCreator('/cap21-newton-cotes/introduccion', '520'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap22-gauss-romberg',
-                component: ComponentCreator('/cap22-gauss-romberg', '25f'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap22-gauss-romberg/introduccion',
-                component: ComponentCreator('/cap22-gauss-romberg/introduccion', 'cf9'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap23-diferenciacion',
-                component: ComponentCreator('/cap23-diferenciacion', 'ccf'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap23-diferenciacion/introduccion',
-                component: ComponentCreator('/cap23-diferenciacion/introduccion', 'e69'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap25-runge-kutta',
-                component: ComponentCreator('/cap25-runge-kutta', 'a97'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap25-runge-kutta/introduccion',
-                component: ComponentCreator('/cap25-runge-kutta/introduccion', '259'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap27-bvp',
-                component: ComponentCreator('/cap27-bvp', '0b7'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap27-bvp/introduccion',
-                component: ComponentCreator('/cap27-bvp/introduccion', 'c05'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap3-errores',
-                component: ComponentCreator('/cap3-errores', '2c3'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap3-errores/introduccion',
-                component: ComponentCreator('/cap3-errores/introduccion', 'd36'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap4-taylor',
-                component: ComponentCreator('/cap4-taylor', 'd45'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap4-taylor/introduccion',
-                component: ComponentCreator('/cap4-taylor/introduccion', 'f6c'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
               {
                 path: '/cap5',
                 component: ComponentCreator('/cap5', '52c'),
@@ -270,80 +31,302 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/cap5-metodos-cerrados/biseccion',
-                component: ComponentCreator('/cap5-metodos-cerrados/biseccion', 'dd6'),
+                path: '/cap6',
+                component: ComponentCreator('/cap6', '29d'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/cap5-metodos-cerrados/comparativa',
-                component: ComponentCreator('/cap5-metodos-cerrados/comparativa', '3a5'),
+                path: '/cap7',
+                component: ComponentCreator('/cap7', '697'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/cap5-metodos-cerrados/falsa-posicion',
-                component: ComponentCreator('/cap5-metodos-cerrados/falsa-posicion', 'd88'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap5-metodos-cerrados/introduccion',
-                component: ComponentCreator('/cap5-metodos-cerrados/introduccion', '1db'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap6-metodos-abiertos',
-                component: ComponentCreator('/cap6-metodos-abiertos', '1b0'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap6-metodos-abiertos/introduccion',
-                component: ComponentCreator('/cap6-metodos-abiertos/introduccion', 'bb2'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap7-raices-polinomios',
-                component: ComponentCreator('/cap7-raices-polinomios', '0ff'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap7-raices-polinomios/introduccion',
-                component: ComponentCreator('/cap7-raices-polinomios/introduccion', 'aef'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap8-casos-raices',
-                component: ComponentCreator('/cap8-casos-raices', 'e72'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap8-casos-raices/introduccion',
-                component: ComponentCreator('/cap8-casos-raices/introduccion', '8b1'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap9-gauss',
-                component: ComponentCreator('/cap9-gauss', '2e6'),
-                exact: true,
-                sidebar: "tutorialSidebar"
-              },
-              {
-                path: '/cap9-gauss/introduccion',
-                component: ComponentCreator('/cap9-gauss/introduccion', '2bd'),
+                path: '/cap8',
+                component: ComponentCreator('/cap8', 'a7e'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
                 path: '/intro',
                 component: ComponentCreator('/intro', '9fa'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-1-introduccion-y-errores',
+                component: ComponentCreator('/parte-1-introduccion-y-errores', 'b10'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-1-introduccion-y-errores/cap1-modelos-matematicos',
+                component: ComponentCreator('/parte-1-introduccion-y-errores/cap1-modelos-matematicos', 'a46'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-1-introduccion-y-errores/cap2-programacion',
+                component: ComponentCreator('/parte-1-introduccion-y-errores/cap2-programacion', 'bc0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-1-introduccion-y-errores/cap3-errores',
+                component: ComponentCreator('/parte-1-introduccion-y-errores/cap3-errores', '3d4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-1-introduccion-y-errores/cap4-taylor',
+                component: ComponentCreator('/parte-1-introduccion-y-errores/cap4-taylor', '3a9'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones',
+                component: ComponentCreator('/parte-2-raices-ecuaciones', '4c4'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap05-metodos-cerrados/biseccion',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap05-metodos-cerrados/biseccion', '844'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap05-metodos-cerrados/comparativa',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap05-metodos-cerrados/comparativa', '51b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap05-metodos-cerrados/falsa-posicion',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap05-metodos-cerrados/falsa-posicion', 'a2a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/comparativa',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/comparativa', '1e1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/newton-raphson',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/newton-raphson', '0bf'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/punto-fijo',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/punto-fijo', '78b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/secante',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/secante', 'b32'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap7-raices-polinomios/deflacion-horner',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap7-raices-polinomios/deflacion-horner', '060'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap7-raices-polinomios/localizacion-cauchy',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap7-raices-polinomios/localizacion-cauchy', '39a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap7-raices-polinomios/metodo-bairstow',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap7-raices-polinomios/metodo-bairstow', 'a8e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap7-raices-polinomios/metodo-muller',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap7-raices-polinomios/metodo-muller', '9f1'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap7-raices-polinomios/propiedades',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap7-raices-polinomios/propiedades', '92a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap8-casos-raices/bungee-jump',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap8-casos-raices/bungee-jump', '15b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap8-casos-raices/cable-colgante',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap8-casos-raices/cable-colgante', '238'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap8-casos-raices/circuito-diodo',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap8-casos-raices/circuito-diodo', 'b16'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap8-casos-raices/tanque-esferico',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap8-casos-raices/tanque-esferico', '10f'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-2-raices-ecuaciones/cap8-casos-raices/viga-vibracion',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap8-casos-raices/viga-vibracion', '672'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-3-ecuaciones-lineales',
+                component: ComponentCreator('/parte-3-ecuaciones-lineales', 'bd8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-3-ecuaciones-lineales/cap10-lu',
+                component: ComponentCreator('/parte-3-ecuaciones-lineales/cap10-lu', 'ec8'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-3-ecuaciones-lineales/cap11-gauss-seidel',
+                component: ComponentCreator('/parte-3-ecuaciones-lineales/cap11-gauss-seidel', '4fe'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-3-ecuaciones-lineales/cap12-casos-lineales',
+                component: ComponentCreator('/parte-3-ecuaciones-lineales/cap12-casos-lineales', '8ef'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-3-ecuaciones-lineales/cap9_5-jacobi-gauss-seidel',
+                component: ComponentCreator('/parte-3-ecuaciones-lineales/cap9_5-jacobi-gauss-seidel', '95a'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-3-ecuaciones-lineales/cap9-gauss',
+                component: ComponentCreator('/parte-3-ecuaciones-lineales/cap9-gauss', '257'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-4-optimizacion',
+                component: ComponentCreator('/parte-4-optimizacion', 'ad0'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-4-optimizacion/cap13-optimizacion-1d',
+                component: ComponentCreator('/parte-4-optimizacion/cap13-optimizacion-1d', 'c9e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-4-optimizacion/cap15-prog-lineal',
+                component: ComponentCreator('/parte-4-optimizacion/cap15-prog-lineal', '0be'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-5-ajuste-curvas',
+                component: ComponentCreator('/parte-5-ajuste-curvas', 'd29'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-5-ajuste-curvas/cap17-regresion',
+                component: ComponentCreator('/parte-5-ajuste-curvas/cap17-regresion', '4ad'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-5-ajuste-curvas/cap18-interpolacion',
+                component: ComponentCreator('/parte-5-ajuste-curvas/cap18-interpolacion', 'd8d'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-5-ajuste-curvas/cap19-fourier',
+                component: ComponentCreator('/parte-5-ajuste-curvas/cap19-fourier', '76e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-6-integracion-diferenciacion',
+                component: ComponentCreator('/parte-6-integracion-diferenciacion', '52c'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-6-integracion-diferenciacion/cap21-newton-cotes',
+                component: ComponentCreator('/parte-6-integracion-diferenciacion/cap21-newton-cotes', 'e8b'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-6-integracion-diferenciacion/cap22-gauss-romberg',
+                component: ComponentCreator('/parte-6-integracion-diferenciacion/cap22-gauss-romberg', '9c7'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-6-integracion-diferenciacion/cap23-diferenciacion',
+                component: ComponentCreator('/parte-6-integracion-diferenciacion/cap23-diferenciacion', 'd4e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-7-edos',
+                component: ComponentCreator('/parte-7-edos', '5ae'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-7-edos/cap25-runge-kutta',
+                component: ComponentCreator('/parte-7-edos/cap25-runge-kutta', 'c18'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-7-edos/cap27-bvp',
+                component: ComponentCreator('/parte-7-edos/cap27-bvp', 'bec'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-8-edps',
+                component: ComponentCreator('/parte-8-edps', '627'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-8-edps/cap30-edp-parabolicas',
+                component: ComponentCreator('/parte-8-edps/cap30-edp-parabolicas', '551'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/parte-8-edps/cap31-fem',
+                component: ComponentCreator('/parte-8-edps/cap31-fem', 'a08'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }

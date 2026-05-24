@@ -1,0 +1,11 @@
+{
+  "label": "Capítulo 7: Raíces de Polinomios",
+  "position": 3,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Capítulo 7: Raíces de Polinomios",
+    "slug": "/cap7",
+    "description": "Técnicas avanzadas y especializadas para la localización de todas las raíces (reales y complejas) de funciones polinomiales. Incluye deflación de Horner, método de Müller y Bairstow."
+  }
+}

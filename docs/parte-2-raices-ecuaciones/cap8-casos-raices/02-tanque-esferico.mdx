@@ -1,0 +1,49 @@
+---
+id: tanque-esferico
+title: "Caso 2: Carga de un Tanque Esférico"
+sidebar_label: "2. Tanque Esférico"
+sidebar_position: 2
+---
+
+# Caso 2: Carga de un Tanque Esférico
+
+## 1. Planteamiento del Problema
+
+Un tanque de almacenamiento esférico de radio $R = 3\,\text{m}$ se llena con agua hasta una profundidad $h$. El volumen de agua $V$ contenido en la esfera en función de la altura del líquido $h$ se calcula mediante la fórmula geométrica de un casquete esférico:
+
+$$
+V = \pi h^2 \left(R - \frac{h}{3}\right)
+$$
+
+---
+
+## 2. Objetivo de Ingeniería
+
+Deseamos calcular la **profundidad exacta $h$** a la cual se debe llenar el tanque esférico para almacenar exactamente un volumen de **$V = 30\,\text{m}^3$**.
+
+---
+
+## 3. Resolución Numérica
+
+Sustituyendo los parámetros en la ecuación y reordenándola de forma homogénea:
+
+$$
+f(h) = \pi h^2 \left(3 - \frac{h}{3}\right) - 30 = 0
+$$
+
+Expandiendo el término cúbico:
+
+$$
+f(h) = -\frac{\pi}{3}h^3 + 3\pi h^2 - 30 = 0
+$$
+
+### Criterio de Búsqueda
+- **Intervalo físico válido**: Dado que el tanque tiene radio $R=3\,\text{m}$, la profundidad física de almacenamiento está acotada estrictamente por el diámetro de la esfera: $h \in [0, 2R] \implies [0, 6]\,\text{m}$.
+- **Método**: Dado que $f(h)$ es monótona creciente y continua en el intervalo físico real, el método de **bisección** en el intervalo $[0, 4]$ converge de manera extraordinariamente segura.
+
+### Resultado:
+Tras varias iteraciones, la profundidad converge con excelente precisión a:
+
+$$
+h \approx 2.0269\,\text{m}
+$$

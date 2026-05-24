@@ -1,0 +1,49 @@
+---
+id: propiedades
+title: Propiedades de los Polinomios
+sidebar_label: Propiedades
+sidebar_position: 1
+---
+
+# Propiedades de los Polinomios y Tipos de Raíces
+
+Un polinomio de grado $n$ tiene la forma general:
+
+$$
+P_n(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0
+$$
+
+Donde los coeficientes $a_i$ son números reales o complejos, y $a_n \neq 0$.
+
+---
+
+## 1. Teoremas Fundamentales
+
+### Teorema Fundamental del Álgebra
+Todo polinomio de grado $n \geq 1$ con coeficientes complejos tiene exactamente $n$ raíces complejas (contando multiplicidades).
+
+### Teorema de las Raíces Complejas Conjugadas
+Si un polinomio $P_n(x)$ tiene coeficientes reales ($a_i \in \mathbb{R}$), y $z = \alpha + \beta i$ es una raíz compleja de $P_n(x)$, entonces su conjugado complejo $\bar{z} = \alpha - \beta i$ también es una raíz de $P_n(x)$. 
+En consecuencia, las raíces complejas de polinomios reales **siempre se presentan en pares conjugados**.
+
+---
+
+## 2. Clasificación de Raíces
+
+| Tipo de Raíz | Descripción Geométrica | Ejemplo |
+| :--- | :--- | :--- |
+| **Real Simple** | La curva del polinomio cruza limpiamente el eje $x$. | $P(x) = x - 2$ (Raíz: $x = 2$) |
+| **Real Múltiple** | La curva toca tangencialmente el eje $x$ sin cruzarlo (si la multiplicidad es par) o lo cruza con pendiente nula (si es impar). | $P(x) = (x - 3)^2$ (Raíz doble en $x = 3$) |
+| **Compleja Conjugada** | La curva no toca el eje $x$ real; las raíces residen enteramente en el plano complejo. | $P(x) = x^2 + 1$ (Raíces: $x = \pm i$) |
+
+---
+
+## 3. Comportamiento en la Cercanía de Raíces Múltiples
+
+Las raíces de multiplicidad par representan un desafío para los métodos cerrados convencionales (como la bisección) debido a que la función no experimenta un cambio de signo en sus límites circundantes:
+
+$$
+P(x) \geq 0 \quad \text{o} \quad P(x) \leq 0 \quad \forall x \in [x^* - \varepsilon, x^* + \varepsilon]
+$$
+
+Para localizar raíces múltiples eficientemente, es común recurrir a técnicas que analizan los ceros de las derivadas sucesivas del polinomio o utilizar métodos especializados como el **Método de Bairstow**.

@@ -1,264 +1,233 @@
 {
-  "/__docusaurus/debug-5ff": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/config-5ba": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/content-a2b": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    },
-    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
-  },
-  "/__docusaurus/debug/globalData-c3c": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/metadata-156": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/registry-88c": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/routes-000": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
   "/markdown-page-53a": {
-    "__comp": "__comp---theme-mdx-page-1-f-3-b90",
+    "__comp": "1f391b9e",
     "__context": {
-      "plugin": "plugin---markdown-pagea-74-7b5"
+      "plugin": "a7456010"
     },
-    "content": "content---markdown-page-4-c-6-c89"
+    "content": "4c678320"
   },
   "/-e5f": {
-    "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
+    "__comp": "1df93b7f",
     "__context": {
-      "plugin": "plugin---markdown-pagea-74-7b5"
+      "plugin": "a7456010"
     },
-    "config": "config---5-e-9-4f3"
+    "config": "5e9f5e1a"
   },
-  "/-7be": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+  "/-7a8": {
+    "__comp": "5e95c892",
     "__context": {
-      "plugin": "plugin---aba-d70"
+      "plugin": "aba21aa0"
     }
   },
-  "/-84f": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---22-d-307"
+  "/-cb8": {
+    "__comp": "a7bd4aaa",
+    "__props": "22dd74f7"
   },
-  "/-0ee": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
-  },
-  "/cap1-modelos-matematicos-ca0": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-1-modelos-matematicos-205-961"
-  },
-  "/cap1-modelos-matematicos/introduccion-e4d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-1-modelos-matematicos-introduccion-1-e-8-7d6"
-  },
-  "/cap10-lu-5af": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-10-lu-544-287"
-  },
-  "/cap10-lu/introduccion-fdf": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-10-lu-introduccioncf-4-662"
-  },
-  "/cap11-gauss-seidel-9fb": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-11-gauss-seideld-52-53d"
-  },
-  "/cap11-gauss-seidel/introduccion-f2e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-11-gauss-seidel-introduccionbea-ea7"
-  },
-  "/cap12-casos-lineales-794": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-12-casos-lineales-37-b-d86"
-  },
-  "/cap12-casos-lineales/introduccion-2a1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-12-casos-lineales-introduccion-810-a48"
-  },
-  "/cap13-optimizacion-1d-cbd": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-13-optimizacion-1-d-669-391"
-  },
-  "/cap13-optimizacion-1d/introduccion-697": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-13-optimizacion-1-d-introduccion-253-800"
-  },
-  "/cap15-prog-lineal-517": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-15-prog-lineale-98-303"
-  },
-  "/cap15-prog-lineal/introduccion-d84": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-15-prog-lineal-introduccion-4-fe-432"
-  },
-  "/cap17-regresion-d1a": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-17-regresion-188-be8"
-  },
-  "/cap17-regresion/introduccion-6ad": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-17-regresion-introducciondca-f22"
-  },
-  "/cap18-interpolacion-7d1": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-18-interpolacion-959-a18"
-  },
-  "/cap18-interpolacion/introduccion-7e4": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-18-interpolacion-introduccion-54-d-bd1"
-  },
-  "/cap19-fourier-623": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-19-fourierfcd-8c9"
-  },
-  "/cap19-fourier/introduccion-fd6": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-19-fourier-introduccion-78-f-b23"
-  },
-  "/cap2-programacion-518": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-2-programacionf-83-473"
-  },
-  "/cap2-programacion/introduccion-db1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-2-programacion-introduccionefe-27a"
-  },
-  "/cap21-newton-cotes-9b0": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-21-newton-cotesf-91-bd1"
-  },
-  "/cap21-newton-cotes/introduccion-520": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-21-newton-cotes-introduccion-2-de-8de"
-  },
-  "/cap22-gauss-romberg-25f": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-22-gauss-romberg-2-fc-935"
-  },
-  "/cap22-gauss-romberg/introduccion-cf9": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-22-gauss-romberg-introduccion-84-d-09e"
-  },
-  "/cap23-diferenciacion-ccf": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-23-diferenciacion-545-57c"
-  },
-  "/cap23-diferenciacion/introduccion-e69": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-23-diferenciacion-introduccion-297-123"
-  },
-  "/cap25-runge-kutta-a97": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-25-runge-kuttac-86-509"
-  },
-  "/cap25-runge-kutta/introduccion-259": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-25-runge-kutta-introduccionfb-4-9d6"
-  },
-  "/cap27-bvp-0b7": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-27-bvpd-5-d-d93"
-  },
-  "/cap27-bvp/introduccion-c05": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-27-bvp-introduccion-515-51a"
-  },
-  "/cap3-errores-2c3": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-3-errores-0-b-2-018"
-  },
-  "/cap3-errores/introduccion-d36": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-3-errores-introduccion-65-e-df0"
-  },
-  "/cap4-taylor-d45": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-4-taylor-850-187"
-  },
-  "/cap4-taylor/introduccion-f6c": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-4-taylor-introduccionfd-0-5b7"
+  "/-605": {
+    "__comp": "a94703ab"
   },
   "/cap5-52c": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-55-cb-9da"
+    "__comp": "14eb3368",
+    "__props": "5cb6d907"
   },
-  "/cap5-metodos-cerrados/biseccion-dd6": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-5-metodos-cerrados-biseccion-424-d06"
+  "/cap6-29d": {
+    "__comp": "14eb3368",
+    "__props": "494b8334"
   },
-  "/cap5-metodos-cerrados/comparativa-3a5": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-5-metodos-cerrados-comparativaa-1-a-536"
+  "/cap7-697": {
+    "__comp": "14eb3368",
+    "__props": "20940976"
   },
-  "/cap5-metodos-cerrados/falsa-posicion-d88": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-5-metodos-cerrados-falsa-posicioncc-4-5da"
-  },
-  "/cap5-metodos-cerrados/introduccion-1db": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-5-metodos-cerrados-introduccion-4-f-3-834"
-  },
-  "/cap6-metodos-abiertos-1b0": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-6-metodos-abiertos-939-07b"
-  },
-  "/cap6-metodos-abiertos/introduccion-bb2": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-6-metodos-abiertos-introduccion-9-cd-0b8"
-  },
-  "/cap7-raices-polinomios-0ff": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-7-raices-polinomiosdcc-3cc"
-  },
-  "/cap7-raices-polinomios/introduccion-aef": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-7-raices-polinomios-introduccion-017-fae"
-  },
-  "/cap8-casos-raices-e72": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-8-casos-raices-32-f-7a1"
-  },
-  "/cap8-casos-raices/introduccion-8b1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-8-casos-raices-introduccion-852-f5a"
-  },
-  "/cap9-gauss-2e6": {
-    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "__props": "__props---cap-9-gauss-470-ff7"
-  },
-  "/cap9-gauss/introduccion-2bd": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---cap-9-gauss-introduccione-77-2dc"
+  "/cap8-a7e": {
+    "__comp": "14eb3368",
+    "__props": "d370010f"
   },
   "/intro-9fa": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---intro-0-e-3-7b8"
+    "__comp": "17896441",
+    "content": "0e384e19"
+  },
+  "/parte-1-introduccion-y-errores-b10": {
+    "__comp": "14eb3368",
+    "__props": "16a93acf"
+  },
+  "/parte-1-introduccion-y-errores/cap1-modelos-matematicos-a46": {
+    "__comp": "17896441",
+    "content": "92647581"
+  },
+  "/parte-1-introduccion-y-errores/cap2-programacion-bc0": {
+    "__comp": "17896441",
+    "content": "10fef893"
+  },
+  "/parte-1-introduccion-y-errores/cap3-errores-3d4": {
+    "__comp": "17896441",
+    "content": "b965c538"
+  },
+  "/parte-1-introduccion-y-errores/cap4-taylor-3a9": {
+    "__comp": "17896441",
+    "content": "33259d95"
+  },
+  "/parte-2-raices-ecuaciones-4c4": {
+    "__comp": "14eb3368",
+    "__props": "98702856"
+  },
+  "/parte-2-raices-ecuaciones/cap05-metodos-cerrados/biseccion-844": {
+    "__comp": "17896441",
+    "content": "9561d0de"
+  },
+  "/parte-2-raices-ecuaciones/cap05-metodos-cerrados/comparativa-51b": {
+    "__comp": "17896441",
+    "content": "ec790eea"
+  },
+  "/parte-2-raices-ecuaciones/cap05-metodos-cerrados/falsa-posicion-a2a": {
+    "__comp": "17896441",
+    "content": "545071c4"
+  },
+  "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/comparativa-1e1": {
+    "__comp": "17896441",
+    "content": "875ca0d5"
+  },
+  "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/newton-raphson-0bf": {
+    "__comp": "17896441",
+    "content": "45e5b52d"
+  },
+  "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/punto-fijo-78b": {
+    "__comp": "17896441",
+    "content": "1163f965"
+  },
+  "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/secante-b32": {
+    "__comp": "17896441",
+    "content": "62af10ed"
+  },
+  "/parte-2-raices-ecuaciones/cap7-raices-polinomios/deflacion-horner-060": {
+    "__comp": "17896441",
+    "content": "fa2758cf"
+  },
+  "/parte-2-raices-ecuaciones/cap7-raices-polinomios/localizacion-cauchy-39a": {
+    "__comp": "17896441",
+    "content": "5dcc24eb"
+  },
+  "/parte-2-raices-ecuaciones/cap7-raices-polinomios/metodo-bairstow-a8e": {
+    "__comp": "17896441",
+    "content": "d63a3978"
+  },
+  "/parte-2-raices-ecuaciones/cap7-raices-polinomios/metodo-muller-9f1": {
+    "__comp": "17896441",
+    "content": "828840b6"
+  },
+  "/parte-2-raices-ecuaciones/cap7-raices-polinomios/propiedades-92a": {
+    "__comp": "17896441",
+    "content": "bc4d125a"
+  },
+  "/parte-2-raices-ecuaciones/cap8-casos-raices/bungee-jump-15b": {
+    "__comp": "17896441",
+    "content": "aba7efcc"
+  },
+  "/parte-2-raices-ecuaciones/cap8-casos-raices/cable-colgante-238": {
+    "__comp": "17896441",
+    "content": "b5754231"
+  },
+  "/parte-2-raices-ecuaciones/cap8-casos-raices/circuito-diodo-b16": {
+    "__comp": "17896441",
+    "content": "cda9f278"
+  },
+  "/parte-2-raices-ecuaciones/cap8-casos-raices/tanque-esferico-10f": {
+    "__comp": "17896441",
+    "content": "20cd20e8"
+  },
+  "/parte-2-raices-ecuaciones/cap8-casos-raices/viga-vibracion-672": {
+    "__comp": "17896441",
+    "content": "a3944fe2"
+  },
+  "/parte-3-ecuaciones-lineales-bd8": {
+    "__comp": "14eb3368",
+    "__props": "a688ee21"
+  },
+  "/parte-3-ecuaciones-lineales/cap10-lu-ec8": {
+    "__comp": "17896441",
+    "content": "7f9fe5b8"
+  },
+  "/parte-3-ecuaciones-lineales/cap11-gauss-seidel-4fe": {
+    "__comp": "17896441",
+    "content": "398d8539"
+  },
+  "/parte-3-ecuaciones-lineales/cap12-casos-lineales-8ef": {
+    "__comp": "17896441",
+    "content": "4ca9d280"
+  },
+  "/parte-3-ecuaciones-lineales/cap9_5-jacobi-gauss-seidel-95a": {
+    "__comp": "17896441",
+    "content": "1021bc2d"
+  },
+  "/parte-3-ecuaciones-lineales/cap9-gauss-257": {
+    "__comp": "17896441",
+    "content": "efd45624"
+  },
+  "/parte-4-optimizacion-ad0": {
+    "__comp": "14eb3368",
+    "__props": "b9c3d2a5"
+  },
+  "/parte-4-optimizacion/cap13-optimizacion-1d-c9e": {
+    "__comp": "17896441",
+    "content": "19488155"
+  },
+  "/parte-4-optimizacion/cap15-prog-lineal-0be": {
+    "__comp": "17896441",
+    "content": "bb9a521b"
+  },
+  "/parte-5-ajuste-curvas-d29": {
+    "__comp": "14eb3368",
+    "__props": "3d9c4a2a"
+  },
+  "/parte-5-ajuste-curvas/cap17-regresion-4ad": {
+    "__comp": "17896441",
+    "content": "46ef55dc"
+  },
+  "/parte-5-ajuste-curvas/cap18-interpolacion-d8d": {
+    "__comp": "17896441",
+    "content": "403bf1af"
+  },
+  "/parte-5-ajuste-curvas/cap19-fourier-76e": {
+    "__comp": "17896441",
+    "content": "a0dbdaaf"
+  },
+  "/parte-6-integracion-diferenciacion-52c": {
+    "__comp": "14eb3368",
+    "__props": "bf0509b7"
+  },
+  "/parte-6-integracion-diferenciacion/cap21-newton-cotes-e8b": {
+    "__comp": "17896441",
+    "content": "67a67738"
+  },
+  "/parte-6-integracion-diferenciacion/cap22-gauss-romberg-9c7": {
+    "__comp": "17896441",
+    "content": "32b2318d"
+  },
+  "/parte-6-integracion-diferenciacion/cap23-diferenciacion-d4e": {
+    "__comp": "17896441",
+    "content": "226ad2b7"
+  },
+  "/parte-7-edos-5ae": {
+    "__comp": "14eb3368",
+    "__props": "a584b574"
+  },
+  "/parte-7-edos/cap25-runge-kutta-c18": {
+    "__comp": "17896441",
+    "content": "75a19a03"
+  },
+  "/parte-7-edos/cap27-bvp-bec": {
+    "__comp": "17896441",
+    "content": "64da40d1"
+  },
+  "/parte-8-edps-627": {
+    "__comp": "14eb3368",
+    "__props": "1e8c7721"
+  },
+  "/parte-8-edps/cap30-edp-parabolicas-551": {
+    "__comp": "17896441",
+    "content": "a6494a05"
+  },
+  "/parte-8-edps/cap31-fem-a08": {
+    "__comp": "17896441",
+    "content": "a21bce34"
   }
 }

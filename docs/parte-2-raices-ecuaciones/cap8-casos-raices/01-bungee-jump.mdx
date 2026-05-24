@@ -1,0 +1,46 @@
+---
+id: bungee-jump
+title: "Caso 1: Diseño de un Bungee Jump"
+sidebar_label: "1. Bungee Jump"
+sidebar_position: 1
+---
+
+# Caso 1: Diseño de un Bungee Jump
+
+## 1. Planteamiento del Problema
+
+Un bungee jumper de masa $m = 68.1\,\text{kg}$ realiza un salto al vacío. Deseamos calcular la velocidad en función del tiempo transcurrido $t$, considerando una fuerza de arrastre de tipo cuadrático:
+
+$$
+v(t) = \sqrt{\frac{gm}{c_d}}\,\tanh\!\left(\sqrt{\frac{g\,c_d}{m}}\,t\right)
+$$
+
+Donde:
+- $g = 9.81\,\text{m/s}^2$ (aceleración de la gravedad).
+- $m = 68.1\,\text{kg}$ (masa del deportista).
+- $c_d$ es el coeficiente de arrastre del aire (parámetro de diseño).
+
+---
+
+## 2. Objetivo de Ingeniería
+
+Determinar con alta precisión el valor del **coeficiente de arrastre $c_d$** tal que el salto cumpla con la restricción física de que la velocidad alcance exactamente los **$v(10) = 40\,\text{m/s}$** al cabo de $t = 10\,\text{s}$.
+
+---
+
+## 3. Resolución Numérica
+
+Definimos la función no lineal a resolver igualándola a cero:
+
+$$
+f(c_d) = \sqrt{\frac{g \cdot 68.1}{c_d}}\,\tanh\!\left(\sqrt{\frac{g \cdot c_d}{68.1}} \cdot 10\right) - 40 = 0
+$$
+
+Aplicando el método de **Newton-Raphson** o de la **Secante**:
+
+- **Intervalo físico de búsqueda**: $c_d \in [0.1, 20.0]\,\text{kg/m}$.
+- **Resultado de convergencia**: El método converge con una tolerancia menor al $0.001\%$ en:
+
+$$
+c_d \approx 14.7523\,\text{kg/m}
+$$

@@ -80,9 +80,9 @@ export default {
   ],
   "stylesheets": [
     {
-      "href": "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      "href": "https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css",
       "type": "text/css",
-      "integrity": "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQWSiLPNhNzmWYTdM1G98HQVG+0zUMRjnO3adPcV",
+      "integrity": "sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV",
       "crossorigin": "anonymous"
     }
   ],
@@ -103,8 +103,8 @@ export default {
         {
           "type": "docSidebar",
           "sidebarId": "tutorialSidebar",
-          "position": "left",
-          "label": "Documentación"
+          "position": "right",
+          "label": "Leer más ..."
         }
       ],
       "hideOnScroll": false

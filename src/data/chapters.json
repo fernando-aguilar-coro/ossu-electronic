@@ -1,0 +1,202 @@
+[
+  {
+    "num": "01",
+    "title": "Modelos Matemáticos",
+    "desc": "Modelado matemático de problemas de ingeniería y ciclo de solución numérica.",
+    "link": "/parte-1-introduccion-y-errores/cap1-modelos-matematicos",
+    "icon": "⚙️",
+    "ready": true
+  },
+  {
+    "num": "02",
+    "title": "Programación y Software",
+    "desc": "Herramientas computacionales, entornos de trabajo y estructura de programas numéricos.",
+    "link": "/parte-1-introduccion-y-errores/cap2-programacion",
+    "icon": "💾",
+    "ready": true
+  },
+  {
+    "num": "03",
+    "title": "Aproximaciones y Errores",
+    "desc": "Errores de redondeo, truncamiento, precisión significativa y aritmética de punto flotante.",
+    "link": "/parte-1-introduccion-y-errores/cap3-errores",
+    "icon": "±",
+    "ready": true
+  },
+  {
+    "num": "04",
+    "title": "Serie de Taylor",
+    "desc": "Expansión en serie de Taylor y análisis del error de truncamiento.",
+    "link": "/parte-1-introduccion-y-errores/cap4-taylor",
+    "icon": "∑",
+    "ready": true
+  },
+  {
+    "num": "05",
+    "title": "Métodos Cerrados",
+    "desc": "Bisección y Falsa Posición. Garantía de convergencia mediante el Teorema de Bolzano.",
+    "link": "/cap5",
+    "icon": "⟨⟩",
+    "ready": true
+  },
+  {
+    "num": "06",
+    "title": "Métodos Abiertos",
+    "desc": "Newton-Raphson, Secante y Punto Fijo. Convergencia cuadrática sin intervalo inicial.",
+    "link": "/cap6",
+    "icon": "∞",
+    "ready": true
+  },
+  {
+    "num": "07",
+    "title": "Raíces de Polinomios",
+    "desc": "Métodos de Müller, Bairstow y deflación para encontrar raíces de polinomios.",
+    "link": "/cap7",
+    "icon": "ƒ",
+    "ready": true
+  },
+  {
+    "num": "08",
+    "title": "Casos: Raíces",
+    "desc": "Estudio de casos de ingeniería resueltos con métodos de búsqueda de raíces.",
+    "link": "/cap8",
+    "icon": "📋",
+    "ready": true
+  },
+  {
+    "num": "09",
+    "title": "Eliminación de Gauss",
+    "desc": "Solución de sistemas lineales mediante eliminación hacia adelante y sustitución regresiva.",
+    "link": "/parte-3-ecuaciones-lineales/cap9-gauss",
+    "icon": "⊞",
+    "ready": true
+  },
+  {
+    "num": "09.5",
+    "title": "Jacobi y Gauss-Seidel",
+    "desc": "Métodos iterativos para resolver sistemas de ecuaciones lineales y criterios de convergencia.",
+    "link": "/parte-3-ecuaciones-lineales/cap9_5-jacobi-gauss-seidel",
+    "icon": "🔄",
+    "ready": true
+  },
+  {
+    "num": "10",
+    "title": "Descomposición LU",
+    "desc": "Factorización LU e inversión de matrices. Aplicaciones en sistemas múltiples.",
+    "link": "/parte-3-ecuaciones-lineales/cap10-lu",
+    "icon": "▦",
+    "ready": true
+  },
+  {
+    "num": "11",
+    "title": "Matrices Especiales",
+    "desc": "Matrices especiales, iteración de Gauss-Seidel y criterio de convergencia.",
+    "link": "/parte-3-ecuaciones-lineales/cap11-gauss-seidel",
+    "icon": "🔄",
+    "ready": true
+  },
+  {
+    "num": "12",
+    "title": "Casos: Álgebra Lineal",
+    "desc": "Estudio de casos de ingeniería resueltos con sistemas de ecuaciones lineales.",
+    "link": "/parte-3-ecuaciones-lineales/cap12-casos-lineales",
+    "icon": "📐",
+    "ready": true
+  },
+  {
+    "num": "13",
+    "title": "Optimización 1D",
+    "desc": "Búsqueda de oro (Golden Section) y método parabólico para optimización unimodal.",
+    "link": "/parte-4-optimizacion/cap13-optimizacion-1d",
+    "icon": "⌃",
+    "ready": true
+  },
+  {
+    "num": "15",
+    "title": "Programación Lineal",
+    "desc": "Optimización restringida. Método simplex y problemas de programación lineal.",
+    "link": "/parte-4-optimizacion/cap15-prog-lineal",
+    "icon": "◇",
+    "ready": true
+  },
+  {
+    "num": "17",
+    "title": "Regresión por Mínimos Cuadrados",
+    "desc": "Ajuste lineal, polinomial y múltiple. Coeficiente de determinación $r^2$.",
+    "link": "/parte-5-ajuste-curvas/cap17-regresion",
+    "icon": "∿",
+    "ready": true
+  },
+  {
+    "num": "18",
+    "title": "Interpolación",
+    "desc": "Polinomios de Newton y Lagrange. Interpolación de Spline cúbica.",
+    "link": "/parte-5-ajuste-curvas/cap18-interpolacion",
+    "icon": "⋯",
+    "ready": true
+  },
+  {
+    "num": "19",
+    "title": "Aproximación de Fourier",
+    "desc": "Series de Fourier y Transformada Rápida de Fourier (FFT) para análisis de señales.",
+    "link": "/parte-5-ajuste-curvas/cap19-fourier",
+    "icon": "〜",
+    "ready": true
+  },
+  {
+    "num": "21",
+    "title": "Integración Newton-Cotes",
+    "desc": "Reglas del trapecio, Simpson 1/3 y 3/8, con análisis de error.",
+    "link": "/parte-6-integracion-diferenciacion/cap21-newton-cotes",
+    "icon": "∫",
+    "ready": true
+  },
+  {
+    "num": "22",
+    "title": "Gauss y Romberg",
+    "desc": "Cuadratura gaussiana y extrapolación de Romberg para mayor precisión.",
+    "link": "/parte-6-integracion-diferenciacion/cap22-gauss-romberg",
+    "icon": "∬",
+    "ready": true
+  },
+  {
+    "num": "23",
+    "title": "Diferenciación Numérica",
+    "desc": "Fórmulas de diferencias finitas hacia adelante, atrás y centradas.",
+    "link": "/parte-6-integracion-diferenciacion/cap23-diferenciacion",
+    "icon": "∂",
+    "ready": true
+  },
+  {
+    "num": "25",
+    "title": "Runge-Kutta",
+    "desc": "Métodos de Euler, Heun y Runge-Kutta de orden 4 para EDOs.",
+    "link": "/parte-7-edos/cap25-runge-kutta",
+    "icon": "→",
+    "ready": true
+  },
+  {
+    "num": "27",
+    "title": "Valores en la Frontera",
+    "desc": "Problemas de valores en la frontera y valores propios. Método de disparo.",
+    "link": "/parte-7-edos/cap27-bvp",
+    "icon": "⊣⊢",
+    "ready": true
+  },
+  {
+    "num": "30",
+    "title": "Diferencias Finitas: EDP",
+    "desc": "Ecuaciones parabólicas y método de Crank-Nicholson para difusión.",
+    "link": "/parte-8-edps/cap30-edp-parabolicas",
+    "icon": "∇",
+    "ready": true
+  },
+  {
+    "num": "31",
+    "title": "Elementos Finitos",
+    "desc": "Método del elemento finito para problemas de valor en la frontera en 1D y 2D.",
+    "link": "/parte-8-edps/cap31-fem",
+    "icon": "⬡",
+    "ready": true
+  }
+]

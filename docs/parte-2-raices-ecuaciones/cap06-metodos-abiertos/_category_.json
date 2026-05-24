@@ -1,0 +1,11 @@
+{
+  "label": "Capítulo 6: Métodos Abiertos",
+  "position": 1,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "title": "Capítulo 6: Métodos Abiertos",
+    "slug": "/cap6",
+    "description": "Técnicas iterativas para la búsqueda de raíces a partir de estimaciones iniciales sin requerir un intervalo de cambio de signo. Incluye punto fijo, Newton-Raphson y la secante."
+  }
+}

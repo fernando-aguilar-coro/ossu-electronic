@@ -1,0 +1,70 @@
+---
+id: metodo-bairstow
+title: Método de Bairstow
+sidebar_label: Método de Bairstow
+sidebar_position: 4
+---
+
+# Método de Bairstow
+
+El método de **Bairstow** es un algoritmo numérico especializado en encontrar **todas las raíces de un polinomio**, incluyendo raíces reales y complejas complejas conjugadas.
+
+---
+
+## 1. Idea Fundamental
+
+A diferencia de Müller u otros métodos que operan con aritmética compleja explícita, Bairstow trabaja **exclusivamente con aritmética de números reales** para extraer factores cuadráticos de la forma:
+
+$$
+x^2 - r x - s
+$$
+
+Donde $r$ y $s$ son parámetros reales. Una vez encontrado un factor cuadrático aproximado, sus raíces (que pueden ser complejas conjugadas) se calculan analíticamente aplicando la fórmula general de segundo grado:
+
+$$
+x = \frac{r \pm \sqrt{r^2 + 4s}}{2}
+$$
+
+---
+
+## 2. Derivación y División Sintética Cuadrática
+
+Si dividimos un polinomio $P_n(x)$ por el factor cuadrático $x^2 - rx - s$, obtenemos un cociente $Q_{n-2}(x)$ de grado $n-2$ y un residuo lineal de la forma $R(x) = c_1(x - r) + c_0$:
+
+$$
+P_n(x) = (x^2 - rx - s) \cdot Q_{n-2}(x) + b_1(x - r) + b_0
+$$
+
+Para que el factor cuadrático sea exacto, el residuo debe anularse por completo. Esto nos lleva a resolver el sistema de ecuaciones no lineales:
+
+$$
+b_1(r, s) = 0 \quad \text{y} \quad b_0(r, s) = 0
+$$
+
+---
+
+## 3. Formulación Iterativa de Newton-Raphson
+
+Para refinar $r$ y $s$, Bairstow aplica un método de Newton-Raphson bidimensional sobre el sistema de residuos, resolviendo iterativamente el siguiente sistema lineal de corrección:
+
+$$
+\begin{pmatrix} 
+\partial b_1/\partial r & \partial b_1/\partial s \\ 
+\partial b_0/\partial r & \partial b_0/\partial s 
+\end{pmatrix} 
+\begin{pmatrix} 
+\Delta r \\ 
+\Delta s 
+\end{pmatrix} 
+= 
+-\begin{pmatrix} 
+b_1 \\ 
+b_0 
+\end{pmatrix}
+$$
+
+Las derivadas parciales se obtienen de manera extremadamente eficiente ejecutando una segunda ronda de división sintética sobre los propios coeficientes calculados.
+
+### Ventajas del Método:
+- **Sin Aritmética Compleja**: Encuentra raíces imaginarias y reales utilizando solo operaciones con números reales en el bucle principal.
+- **Deflación Cuadrática**: Al hallar un factor, desinfla el polinomio en dos grados a la vez, haciéndolo ideal para la resolución iterativa de polinomios de grados muy elevados.

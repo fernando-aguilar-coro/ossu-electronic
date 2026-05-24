@@ -1,0 +1,216 @@
+---
+id: secante
+title: Método de la Secante
+sidebar_label: Secante
+sidebar_position: 3
+---
+
+import OpenMethodsSim from '@site/src/components/simulations/OpenMethodsSim';
+
+# Método de la Secante
+
+El método de **la Secante** es un algoritmo de búsqueda de raíces que surge como una alternativa a Newton-Raphson, diseñada para evitar el cálculo analítico de la derivada de la función. Para ello, aproxima la derivada mediante una **recta secante** que pasa por dos estimaciones iniciales consecutivas.
+
+---
+
+## 1. Derivación Geométrica y Analítica
+
+En el método de Newton-Raphson, la fórmula iterativa es:
+
+$$
+x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
+$$
+
+Si la función $f(x)$ es matemáticamente muy compleja, calcular su derivada analítica $f'(x)$ puede ser sumamente laborioso o computacionalmente prohibitivo. 
+
+Una solución consiste en aproximar la derivada utilizando una diferencia finita hacia atrás usando **dos puntos previos** $x_{i-1}$ y $x_i$:
+
+$$
+f'(x_i) \approx \frac{f(x_i) - f(x_{i-1})}{x_i - x_{i-1}}
+$$
+
+Sustituyendo esta aproximación en la fórmula de Newton-Raphson, obtenemos la **fórmula iterativa del método de la secante**:
+
+$$
+\boxed{x_{i+1} = x_i - \frac{f(x_i)(x_i - x_{i-1})}{f(x_i) - f(x_{i-1})}}
+$$
+
+### Diferencia con el Método de Falsa Posición
+Aunque la fórmula matemática de la secante es algebraicamente idéntica a la del método de falsa posición, difieren radicalmente en su comportamiento dinámico:
+- **Falsa Posición**: Es un método cerrado. Siempre mantiene la raíz encerrada en un intervalo $[x_l, x_u]$ donde ocurre un cambio de signo ($f(x_l) \cdot f(x_u) < 0$).
+- **Secante**: Es un método abierto. Utiliza las dos últimas estimaciones sucesivas para trazar la secante, independientemente de si la raíz queda encerrada o de si hay cambio de signo. Por tanto, la secante puede converger más rápido, pero **no garantiza la convergencia**.
+
+---
+
+## 2. Análisis del Orden de Convergencia
+
+El orden de convergencia de la secante se sitúa entre el de la bisección (lineal) y el de Newton-Raphson (cuadrático).
+
+:::important Razón Áurea en la Convergencia
+Se puede demostrar rigurosamente que el error del método de la secante satisface la siguiente relación asintótica:
+
+$$
+E_{i+1} \approx C \cdot E_i^{\phi}
+$$
+
+Donde $\phi$ es la **razón áurea**:
+
+$$
+\phi = \frac{1 + \sqrt{5}}{2} \approx 1.618033...
+$$
+
+Por ende, la secante tiene una **convergencia superlineal** de orden $\approx 1.618$. El número de cifras correctas se multiplica por 1.618 en cada iteración.
+:::
+
+### Comparación de Eficiencia Computacional
+Para comparar la eficiencia práctica entre Newton-Raphson y la Secante, debemos analizar el número de **evaluaciones de funciones** necesarias por iteración:
+
+- **Newton-Raphson**: Requiere evaluar $f(x_i)$ y $f'(x_i)$ en cada paso. Esto equivale a **2 evaluaciones de función** por iteración.
+- **la Secante**: Requiere evaluar únicamente $f(x_i)$ en cada paso, ya que el valor de $f(x_{i-1})$ se almacena en memoria de la iteración anterior. Esto equivale a **1 sola evaluación de función** por iteración.
+
+En términos del **Índice de Eficiencia de Ostrowski** ($I = r^{1/N}$, donde $r$ es el orden de convergencia y $N$ es el número de evaluaciones):
+- $I_{\text{Newton}} = 2^{1/2} \approx 1.414$
+- $I_{\text{Secante}} = 1.618^{1/1} \approx 1.618$
+
+:::tip Criterio de Selección
+Si la evaluación de $f'(x)$ requiere mucho tiempo de cómputo (por ejemplo, en sistemas físicos donde $f$ se calcula resolviendo internamente simulaciones numéricas pesadas), **el método de la secante es más veloz en tiempo real de reloj** que el método de Newton-Raphson.
+:::
+
+---
+
+## 3. Implementación en Python (Calidad de Producción)
+
+El siguiente código implementa el algoritmo de la secante almacenando en caché las evaluaciones funcionales previas para evitar re-cálculos costosos y manejando divisiones por cero cuando la pendiente de la secante se anula.
+
+```python
+from typing import Callable, Tuple, List
+
+def secante(
+    f: Callable[[float], float],
+    x0: float,
+    x1: float,
+    es: float = 0.0001,
+    imax: int = 100,
+    min_diff: float = 1e-12
+) -> Tuple[float, List[dict]]:
+    """
+    Encuentra la raíz de f(x) = 0 usando el método de la Secante.
+
+    Parámetros:
+    -----------
+    f        : Función original continua.
+    x0, x1   : Dos estimaciones iniciales de partida.
+    es       : Tolerancia del error aproximado porcentual (%) (default: 0.0001%).
+    imax     : Número máximo de iteraciones permitidas (default: 100).
+    min_diff : Umbral mínimo para la diferencia entre evaluaciones de f (evita divisiones por cero).
+
+    Retorna:
+    --------
+    Tuple[float, List[dict]]:
+        - Raíz aproximada.
+        - Historial detallado de las iteraciones.
+    """
+    # Inicialización de puntos y caché de evaluaciones
+    x_prev = x0
+    x_curr = x1
+    
+    try:
+        f_prev = f(x_prev)
+        f_curr = f(x_curr)
+    except Exception as err:
+        raise ValueError(f"Error al evaluar f(x) en los puntos de inicio: {err}")
+        
+    historial = []
+    
+    for i in range(imax):
+        diff_f = f_curr - f_prev
+        
+        # Validación de división por cero
+        if abs(diff_f) < min_diff:
+            raise ZeroDivisionError(
+                f"Pendiente nula detectada en la iteración {i+1}. "
+                f"f(x_i) y f(x_{{i-1}}) son virtualmente idénticos ({f_curr:.6e}). "
+                "No se puede trazar la recta secante."
+            )
+            
+        # Fórmula de la Secante
+        x_next = x_curr - (f_curr * (x_curr - x_prev)) / diff_f
+        
+        ea = 100.0
+        if x_next != 0:
+            ea = abs((x_next - x_curr) / x_next) * 100
+            
+        registro = {
+            "iter": i + 1,
+            "x_{i-1}": x_prev,
+            "x_i": x_curr,
+            "f(x_{i-1})": f_prev,
+            "f(x_i)": f_curr,
+            "x_{i+1}": x_next,
+            "ea": ea
+        }
+        historial.append(registro)
+        
+        if ea < es:
+            return x_next, historial
+            
+        # Desplazamiento de variables para la siguiente iteración
+        x_prev = x_curr
+        f_prev = f_curr
+        x_curr = x_next
+        f_curr = f(x_next)  # Única evaluación funcional nueva por iteración.
+        
+    return x_curr, historial
+```
+
+---
+
+## 4. Ejemplo Numérico Resuelto
+
+**Problema**: Encontrar la raíz de $f(x) = e^{-x} - x$ utilizando $x_0 = 0.0$ y $x_1 = 1.0$ con tolerancia $\varepsilon_s = 0.1\%$.
+
+### Iteraciones Manuales
+
+- **Iteración 1**:
+  - $x_0 = 0.0 \implies f(0.0) = 1.000000$
+  - $x_1 = 1.0 \implies f(1.0) \approx -0.632121$
+  - $x_2 = 1.0 - \frac{-0.632121 \cdot (1.0 - 0.0)}{-0.632121 - 1.0} = 1.0 - 0.387396 = 0.612700$
+  - $\varepsilon_a = \left|\frac{0.612700 - 1.0}{0.612700}\right| \times 100 = 63.21\%$
+
+- **Iteración 2**:
+  - $x_1 = 1.0 \implies f(1.0) \approx -0.632121$
+  - $x_2 = 0.612700 \implies f(0.612700) \approx -0.070814$
+  - $x_3 = 0.612700 - \frac{-0.070814 \cdot (0.612700 - 1.0)}{-0.070814 - (-0.632121)} = 0.563838$
+  - $\varepsilon_a = \left|\frac{0.563838 - 0.612700}{0.563838}\right| \times 100 = 8.67\%$
+
+- **Iteración 3**:
+  - $x_2 = 0.612700 \implies f(0.612700) \approx -0.070814$
+  - $x_3 = 0.563838 \implies f(0.563838) \approx 0.005182$
+  - $x_4 = 0.563838 - \frac{0.005182 \cdot (0.563838 - 0.612700)}{0.005182 - (-0.070814)} = 0.567170$
+  - $\varepsilon_a = \left|\frac{0.567170 - 0.563838}{0.567170}\right| \times 100 = 0.587\%$
+
+- **Iteración 4**:
+  - $x_3 = 0.563838 \implies f(0.563838) \approx 0.005182$
+  - $x_4 = 0.567170 \implies f(0.567170) \approx -0.000042$
+  - $x_5 = 0.567170 - \frac{-0.000042 \cdot (0.567170 - 0.563838)}{-0.000042 - 0.005182} = 0.567143$
+  - $\varepsilon_a = 0.0048\%$
+
+### Tabla de Resultados de la Secante
+| Iter | $x_{i-1}$ | $x_i$ | $f(x_{i-1})$ | $f(x_i)$ | $x_{i+1}$ | $\varepsilon_a$ (%) |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | 0.000000 | 1.000000 | 1.000000 | -0.632121 | 0.612700 | 63.21% |
+| 2 | 1.000000 | 0.612700 | -0.632121 | -0.070814 | 0.563838 | 8.67% |
+| 3 | 0.612700 | 0.563838 | -0.070814 | 0.005182 | 0.567170 | 0.587% |
+| 4 | 0.563838 | 0.567170 | 0.005182 | -0.000042 | 0.567143 | **0.0048%** ✓ |
+
+:::tip Conclusión del ejemplo
+El método converge en **4 iteraciones** sin necesidad de derivar la función. Esto demuestra empíricamente que la secante es sumamente competitiva frente a Newton-Raphson, convirtiéndose en el método predilecto cuando no se dispone de la expresión analítica de la derivada.
+:::
+
+---
+
+## 🎮 Simulación Interactiva
+
+Prueba el método de la Secante en tiempo real. Ingresa tu propia función $f(x)$ y define las dos estimaciones iniciales de partida $x_0$ y $x_1$. Observa cómo el algoritmo traza la **línea recta secante** conectando los dos puntos en cada paso para proyectar la siguiente aproximación en la gráfica interactiva.
+
+<OpenMethodsSim defaultMethod="secante" defaultExpr="exp(-x) - x" defaultX0="0" defaultX1="1" />

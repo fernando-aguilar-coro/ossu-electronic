@@ -1,0 +1,61 @@
+---
+id: deflacion-horner
+title: Deflación y División Sintética (Horner)
+sidebar_label: Deflación e Indización (Horner)
+sidebar_position: 2
+---
+
+# Deflación Polinomial y Algoritmo de Horner
+
+Cuando encontramos una raíz $r$ de un polinomio $P_n(x)$, podemos reducir su grado para facilitar la búsqueda de las raíces restantes mediante un proceso llamado **deflación**.
+
+---
+
+## 1. Fundamento Matemático
+
+Si $r$ es una raíz exacta de $P_n(x)$, el polinomio puede factorizarse como:
+
+$$
+P_n(x) = (x - r) \cdot Q_{n-1}(x)
+$$
+
+Donde $Q_{n-1}(x)$ es un polinomio cociente de grado $n-1$. El cálculo de los coeficientes de $Q_{n-1}(x)$ se realiza utilizando la **división sintética** o el **método de Horner**.
+
+---
+
+## 2. Algoritmo de Horner para Evaluación y División Sintética
+
+El método de Horner permite evaluar un polinomio $P(x)$ en un punto $x = r$ y, al mismo tiempo, obtener los coeficientes del polinomio desinflado $Q(x)$.
+
+Dado $P_n(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_0$, definimos los coeficientes $b_i$ recursivamente:
+
+$$
+b_n = a_n
+$$
+
+$$
+b_i = a_i + b_{i+1} \cdot r \quad \text{para } i = n-1, n-2, \ldots, 0
+$$
+
+### Propiedades clave del resultado:
+- Los coeficientes del polinomio cociente $Q_{n-1}(x)$ son precisamente $b_n, b_{n-1}, \ldots, b_1$.
+- El último término calculado, $b_0$, es el **residuo** de la división, el cual equivale exactamente al valor de la función evaluada en el punto: $b_0 = P_n(r)$.
+
+```
+# Algoritmo de División Sintética de Horner en Pseudocódigo
+b[n] = a[n]
+para i desde n-1 descendiendo hasta 0:
+    b[i] = a[i] + r * b[i+1]
+# b[1..n] son los coeficientes del cociente.
+# b[0] es el residuo (P(r)).
+```
+
+---
+
+## 3. Acumulación del Error de Redondeo
+
+:::warning Advertencia sobre la Deflación
+El proceso de deflación es extremadamente sensible a los errores de redondeo. Si la raíz $r$ es aproximada (no exacta), los coeficientes de $Q_{n-1}(x)$ arrastrarán un error acumulativo. Al buscar las siguientes raíces en el polinomio reducido $Q$, estas raíces serán cada vez menos precisas.
+
+**Mejor Práctica de Ingeniería**: Utilizar la deflación únicamente como una aproximación inicial para hallar zonas de raíces. Una vez localizada la raíz en el polinomio desinflado, se debe **refinar su precisión ejecutando Newton-Raphson sobre el polinomio original $P_n(x)$**.
+:::

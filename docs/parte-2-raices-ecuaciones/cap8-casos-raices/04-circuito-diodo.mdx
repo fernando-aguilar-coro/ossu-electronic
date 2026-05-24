@@ -1,0 +1,48 @@
+---
+id: circuito-diodo
+title: "Caso 4: Circuito Eléctrico no Lineal (Diodo)"
+sidebar_label: "4. Circuito de Diodo"
+sidebar_position: 4
+---
+
+# Caso 4: Circuito Eléctrico no Lineal (Diodo)
+
+## 1. Planteamiento del Problema
+
+Un circuito electrónico simple consta de una fuente de voltaje continuo $V_{cc}$, un resistor de resistencia $R$, y un diodo semiconductor de silicio conectado en serie.
+
+La relación corriente-voltaje no lineal de un diodo semiconductor ideal viene dada por la ecuación de Shockley:
+
+$$
+I = I_s \left(e^{V_d / (n V_T)} - 1\right)
+$$
+
+Donde:
+- $I_s$ es la corriente de saturación inversa ($10^{-12}\,\text{A}$).
+- $V_d$ es la caída de tensión en terminales del diodo.
+- $n$ es el factor de idealidad ($1 \leq n \leq 2$).
+- $V_T$ es el voltaje térmico a temperatura ambiente ($0.0259\,\text{V}$).
+
+---
+
+## 2. Objetivo de Ingeniería
+
+Aplicando la ley de voltajes de Kirchhoff, la corriente total a través del circuito serie cumple con:
+
+$$
+f(V_d) = I_s \left(e^{V_d / (n V_T)} - 1\right) + \frac{V_d - V_{cc}}{R} = 0
+$$
+
+Deseamos calcular la **tensión de operación del diodo $V_d$** para una fuente de $V_{cc} = 5\,\text{V}$ y una resistencia de protección de $R = 1000\,\Omega$.
+
+---
+
+## 3. Resolución Numérica
+
+Debido al crecimiento exponencial salvaje de la ecuación de Shockley, el método de Newton-Raphson puede ser inestable si la estimación inicial no es extremadamente cercana. En su lugar, el método de **la Secante** proporciona una convergencia superlineal robusta sin requerir la derivada analítica:
+
+- **Resultado**: El voltaje de unión de operación del diodo converge a:
+
+$$
+V_d \approx 0.6724\,\text{V}
+$$

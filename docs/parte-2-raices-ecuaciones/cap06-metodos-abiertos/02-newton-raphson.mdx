@@ -1,0 +1,266 @@
+---
+id: newton-raphson
+title: Método de Newton-Raphson
+sidebar_label: Newton-Raphson
+sidebar_position: 2
+---
+
+import OpenMethodsSim from '@site/src/components/simulations/OpenMethodsSim';
+
+# Método de Newton-Raphson
+
+El método de **Newton-Raphson** es uno de los algoritmos de búsqueda de raíces más populares y eficientes. Es un método abierto que utiliza el valor de la función y de su primera derivada para realizar estimaciones cada vez más precisas de la raíz.
+
+---
+
+## 1. Derivación del Método
+
+### Derivación Geométrica
+Geométricamente, el método traza la recta tangente a la curva de la función $f(x)$ en el punto $(x_i, f(x_i))$. La intersección de esta tangente con el eje de las abscisas ($x$) define la siguiente aproximación $x_{i+1}$.
+
+La pendiente de la recta tangente en $x_i$ es la derivada $f'(x_i)$:
+
+$$
+f'(x_i) = \frac{f(x_i) - 0}{x_i - x_{i+1}}
+$$
+
+Despejando $x_{i+1}$:
+
+$$
+\boxed{x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}}
+$$
+
+### Derivación mediante la Serie de Taylor
+El método también puede derivarse a partir de la serie de Taylor de primer orden para $f(x)$ expandida alrededor de $x_i$:
+
+$$
+f(x_{i+1}) \approx f(x_i) + f'(x_i)(x_{i+1} - x_i)
+$$
+
+Imponiendo que $x_{i+1}$ sea la raíz ($f(x_{i+1}) = 0$):
+
+$$
+0 = f(x_i) + f'(x_i)(x_{i+1} - x_i) \implies x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)}
+$$
+
+---
+
+## 2. Demostración Matemática de la Convergencia Cuadrática
+
+Una de las mayores virtudes de Newton-Raphson es su **convergencia cuadrática**: cerca de una raíz simple, el error de la siguiente iteración es aproximadamente proporcional al cuadrado del error de la iteración anterior.
+
+:::important Demostración Rigurosa
+Sea $x^*$ la raíz verdadera de $f(x)$, tal que $f(x^*) = 0$ y $f'(x^*) \neq 0$ (raíz simple).
+Escribimos el desarrollo de la serie de Taylor de $f(x)$ alrededor de $x_i$, evaluada en la raíz $x^*$:
+
+$$
+0 = f(x^*) = f(x_i) + f'(x_i)(x^* - x_i) + \frac{f''(\xi)}{2}(x^* - x_i)^2
+$$
+
+Donde $\xi$ es un punto desconocido ubicado en el intervalo cerrado entre $x_i$ y $x^*$.
+
+Recordando la fórmula de Newton-Raphson:
+
+$$
+x_{i+1} = x_i - \frac{f(x_i)}{f'(x_i)} \implies f(x_i) = f'(x_i)(x_i - x_{i+1})
+$$
+
+Sustituyendo $f(x_i)$ en la ecuación del desarrollo de Taylor:
+
+$$
+0 = f'(x_i)(x_i - x_{i+1}) + f'(x_i)(x^* - x_i) + \frac{f''(\xi)}{2}(x^* - x_i)^2
+$$
+
+Agrupamos los dos primeros términos que multiplican a $f'(x_i)$:
+
+$$
+f'(x_i)(x_i - x_{i+1} + x^* - x_i) = f'(x_i)(x^* - x_{i+1})
+$$
+
+Por lo tanto:
+
+$$
+0 = f'(x_i)(x^* - x_{i+1}) + \frac{f''(\xi)}{2}(x^* - x_i)^2
+$$
+
+Definimos el error verdadero en cada iteración como $E_i = x^* - x_i$. Reescribiendo la expresión:
+
+$$
+f'(x_i) E_{i+1} + \frac{f''(\xi)}{2} E_i^2 = 0
+$$
+
+Despejando el error de la siguiente iteración $E_{i+1}$:
+
+$$
+E_{i+1} = -\frac{f''(\xi)}{2 f'(x_i)} E_i^2
+$$
+
+Cuando el método está cerca de la convergencia, $x_i \to x^*$ y $\xi \to x^*$. Por continuidad de las derivadas:
+
+$$
+E_{i+1} \approx -\frac{f''(x^*)}{2 f'(x^*)} E_i^2
+$$
+
+Dado que el coeficiente $C = \left|-\frac{f''(x^*)}{2 f'(x^*)}\right|$ es una constante, esto demuestra que:
+
+$$
+|E_{i+1}| \leq C |E_i|^2
+$$
+
+El error en cada iteración es proporcional al **cuadrado** del error de la iteración anterior, lo que significa que el número de cifras decimales correctas aproximadamente **se duplica** en cada paso.
+:::
+
+---
+
+## 3. Limitaciones y Casos Patológicos (¿Cuándo Falla?)
+
+A pesar de su velocidad, Newton-Raphson no es infalible. Existen situaciones en las que el método puede fallar catastróficamente o converger de manera sumamente ineficiente:
+
+### A. Derivada Nula u Horizontal ($f'(x_i) \approx 0$)
+Si el punto de iteración cae cerca de un máximo o mínimo local, la tangente será casi horizontal. La división por un número extremadamente pequeño provoca que $x_{i+1}$ salte a un valor gigantesco, alejándose de la zona de interés.
+
+### B. Ciclos Infinitos (Oscilación Permanente)
+Existen funciones donde estimaciones específicas causan que el algoritmo oscile de manera indefinida entre dos o más valores fijos.
+*Ejemplo*: Para $f(x) = x^3 - 5x$, comenzando en $x_0 = 1$ se obtiene $x_1 = -1$, $x_2 = 1$, repitiéndose indefinidamente en un bucle cerrado.
+
+### C. Saltos a Otras Raíces lejanas
+Si la estimación inicial no es lo suficientemente cercana a la raíz de interés, las tangentes pueden proyectar el siguiente punto a una región completamente distinta del dominio, convergiendo a una raíz muy lejana que no era el objetivo del estudio.
+
+### D. Raíces Múltiples (Pérdida de la Convergencia Cuadrática)
+Si $x^*$ es una raíz de multiplicidad $m > 1$, se cumple que $f(x^*) = 0$ y $f'(x^*) = 0$. En este caso, la demostración de la convergencia cuadrática deja de cumplirse y el método se degrada a una **convergencia lineal** lenta.
+*Solución*: Se aplica la fórmula modificada de Newton-Raphson:
+$$
+x_{i+1} = x_i - m \frac{f(x_i)}{f'(x_i)}
+$$
+
+---
+
+## 4. Implementación en Python (Calidad de Producción)
+
+Esta implementación previene divisiones por cero, controla los límites físicos del dominio de búsqueda y reporta el historial detallado de las evaluaciones aritméticas.
+
+```python
+from typing import Callable, Tuple, List
+
+def newton_raphson(
+    f: Callable[[float], float],
+    df: Callable[[float], float],
+    x0: float,
+    es: float = 0.0001,
+    imax: int = 100,
+    min_derivative: float = 1e-12
+) -> Tuple[float, List[dict]]:
+    """
+    Encuentra la raíz de f(x) = 0 usando el método de Newton-Raphson.
+
+    Parámetros:
+    -----------
+    f              : Función original continua.
+    df             : Derivada analítica de la función f.
+    x0             : Estimación inicial.
+    es             : Tolerancia del error aproximado porcentual (%) (default: 0.0001%).
+    imax           : Número máximo de iteraciones permitidas (default: 100).
+    min_derivative : Umbral para detectar derivadas nulas o críticamente pequeñas.
+
+    Retorna:
+    --------
+    Tuple[float, List[dict]]:
+        - Raíz aproximada.
+        - Historial paso a paso del proceso iterativo.
+    """
+    x = x0
+    historial = []
+    
+    for i in range(imax):
+        fx = f(x)
+        dfx = df(x)
+        
+        # Validación de la derivada (caso patológico A)
+        if abs(dfx) < min_derivative:
+            raise ZeroDivisionError(
+                f"Derivada casi nula detectada en x = {x:.6f} (|f'(x)| = {dfx:.2e}). "
+                "El método no puede continuar debido a inestabilidad extrema."
+            )
+            
+        x_nuevo = x - fx / dfx
+        
+        ea = 100.0
+        if x_nuevo != 0:
+            ea = abs((x_nuevo - x) / x_nuevo) * 100
+            
+        registro = {
+            "iter": i + 1,
+            "x_i": x,
+            "f(x_i)": fx,
+            "f'(x_i)": dfx,
+            "ea": ea if i > 0 else float('nan')
+        }
+        historial.append(registro)
+        
+        if i > 0 and ea < es:
+            return x_nuevo, historial
+            
+        x = x_nuevo
+        
+    return x, historial
+```
+
+---
+
+## 5. Ejemplo de Cálculo Paso a Paso
+
+**Problema**: Encontrar la raíz de $f(x) = e^{-x} - x$ utilizando $x_0 = 0$ y una tolerancia $\varepsilon_s = 0.01\%$.
+
+### Planteamiento Analítico
+- Función: $f(x) = e^{-x} - x$
+- Derivada: $f'(x) = -e^{-x} - 1$
+
+### Iteraciones Manuales
+
+- **Iteración 1**:
+  - $x_0 = 0.0$
+  - $f(0) = e^0 - 0 = 1.0$
+  - $f'(0) = -e^0 - 1 = -2.0$
+  - $x_1 = 0.0 - \frac{1.0}{-2.0} = 0.500000$
+  - Error: No calculable en la primera iteración.
+
+- **Iteración 2**:
+  - $x_1 = 0.500000$
+  - $f(0.5) = e^{-0.5} - 0.5 \approx 0.106531$
+  - $f'(0.5) = -e^{-0.5} - 1 \approx -1.606531$
+  - $x_2 = 0.5 - \frac{0.106531}{-1.606531} = 0.566311$
+  - $\varepsilon_a = \left|\frac{0.566311 - 0.5}{0.566311}\right| \times 100 = 11.71\%$
+
+- **Iteración 3**:
+  - $x_2 = 0.566311$
+  - $f(x_2) \approx 0.001305$
+  - $f'(x_2) \approx -1.567616$
+  - $x_3 = 0.566311 - \frac{0.001305}{-1.567616} = 0.567143$
+  - $\varepsilon_a = \left|\frac{0.567143 - 0.566311}{0.567143}\right| \times 100 = 0.147\%$
+
+- **Iteración 4**:
+  - $x_3 = 0.567143$
+  - $f(x_3) \approx 0.000000$
+  - $f'(x_3) \approx -1.567143$
+  - $x_4 = 0.567143 - \frac{1.2e-7}{-1.567143} = 0.567143$
+  - $\varepsilon_a = 0.000022\%$ (Convergencia absoluta).
+
+### Historial Tabulado
+| Iter | $x_i$ | $f(x_i)$ | $f'(x_i)$ | $x_{i+1}$ | $\varepsilon_a$ (%) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| 0 | 0.000000 | 1.000000 | -2.000000 | 0.500000 | — |
+| 1 | 0.500000 | 0.106531 | -1.606531 | 0.566311 | 11.71% |
+| 2 | 0.566311 | 0.001305 | -1.567616 | 0.567143 | 0.147% |
+| 3 | 0.567143 | 0.000000 | -1.567143 | 0.567143 | **0.00002%** ✓ |
+
+:::tip Conclusión del ejemplo
+Gracias a la **convergencia cuadrática**, el método de Newton-Raphson solo necesitó **4 iteraciones** para alcanzar una precisión de 6 decimales correctos, mientras que el método de bisección requirió 17 iteraciones para el mismo problema.
+:::
+
+---
+
+## 🎮 Simulación Interactiva
+
+Prueba el método de Newton-Raphson en tiempo real. Ingresa tu propia función $f(x)$ y define la estimación inicial $x_0$. Observa cómo el algoritmo traza la **línea recta tangente** en cada paso para proyectar la siguiente aproximación en la gráfica interactiva.
+
+<OpenMethodsSim defaultMethod="newton-raphson" defaultExpr="exp(-x) - x" defaultX0="0" />
