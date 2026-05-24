@@ -3,6 +3,41 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
+    path: '/__docusaurus/debug',
+    component: ComponentCreator('/__docusaurus/debug', '5ff'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/config',
+    component: ComponentCreator('/__docusaurus/debug/config', '5ba'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/content',
+    component: ComponentCreator('/__docusaurus/debug/content', 'a2b'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/globalData',
+    component: ComponentCreator('/__docusaurus/debug/globalData', 'c3c'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/metadata',
+    component: ComponentCreator('/__docusaurus/debug/metadata', '156'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/registry',
+    component: ComponentCreator('/__docusaurus/debug/registry', '88c'),
+    exact: true
+  },
+  {
+    path: '/__docusaurus/debug/routes',
+    component: ComponentCreator('/__docusaurus/debug/routes', '000'),
+    exact: true
+  },
+  {
     path: '/markdown-page',
     component: ComponentCreator('/markdown-page', '53a'),
     exact: true
@@ -14,15 +49,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', '7a8'),
+    component: ComponentCreator('/', 'e71'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'cb8'),
+        component: ComponentCreator('/', 'de7'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '605'),
+            component: ComponentCreator('/', '469'),
             routes: [
               {
                 path: '/cap5',
@@ -91,44 +126,44 @@ export default [
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/parte-2-raices-ecuaciones/cap05-metodos-cerrados/biseccion',
-                component: ComponentCreator('/parte-2-raices-ecuaciones/cap05-metodos-cerrados/biseccion', '844'),
+                path: '/parte-2-raices-ecuaciones/cap5-metodos-cerrados/biseccion',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap5-metodos-cerrados/biseccion', '864'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/parte-2-raices-ecuaciones/cap05-metodos-cerrados/comparativa',
-                component: ComponentCreator('/parte-2-raices-ecuaciones/cap05-metodos-cerrados/comparativa', '51b'),
+                path: '/parte-2-raices-ecuaciones/cap5-metodos-cerrados/comparativa',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap5-metodos-cerrados/comparativa', '342'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/parte-2-raices-ecuaciones/cap05-metodos-cerrados/falsa-posicion',
-                component: ComponentCreator('/parte-2-raices-ecuaciones/cap05-metodos-cerrados/falsa-posicion', 'a2a'),
+                path: '/parte-2-raices-ecuaciones/cap5-metodos-cerrados/falsa-posicion',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap5-metodos-cerrados/falsa-posicion', 'e87'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/comparativa',
-                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/comparativa', '1e1'),
+                path: '/parte-2-raices-ecuaciones/cap6-metodos-abiertos/comparativa',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap6-metodos-abiertos/comparativa', '189'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/newton-raphson',
-                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/newton-raphson', '0bf'),
+                path: '/parte-2-raices-ecuaciones/cap6-metodos-abiertos/newton-raphson',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap6-metodos-abiertos/newton-raphson', '3cd'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/punto-fijo',
-                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/punto-fijo', '78b'),
+                path: '/parte-2-raices-ecuaciones/cap6-metodos-abiertos/punto-fijo',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap6-metodos-abiertos/punto-fijo', '2b7'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
               {
-                path: '/parte-2-raices-ecuaciones/cap06-metodos-abiertos/secante',
-                component: ComponentCreator('/parte-2-raices-ecuaciones/cap06-metodos-abiertos/secante', 'b32'),
+                path: '/parte-2-raices-ecuaciones/cap6-metodos-abiertos/secante',
+                component: ComponentCreator('/parte-2-raices-ecuaciones/cap6-metodos-abiertos/secante', 'b04'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },

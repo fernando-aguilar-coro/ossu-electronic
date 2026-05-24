@@ -2,8 +2,8 @@ import { evalFn } from './mathUtils';
 
 export interface Iteration {
   i: number;
-  xl: number;
-  xu: number;
+  xa: number;
+  xb: number;
   xr: number;
   fxr: number;
   ea: number | null;
@@ -16,22 +16,22 @@ export interface Iteration {
 export function runClosedMethod(
   method: 'biseccion' | 'falsa-posicion',
   expr: string,
-  xl0: number,
-  xu0: number,
+  xa0: number,
+  xb0: number,
   es: number,
   imax: number
 ): Iteration[] {
   const iters: Iteration[] = [];
-  let xl = xl0, xu = xu0;
-  let fxl = evalFn(expr, xl);
-  let fxu = evalFn(expr, xu);
+  let xa = xa0, xb = xb0;
+  let fxa = evalFn(expr, xa);
+  let fxb = evalFn(expr, xb);
 
-  if (isNaN(fxl) || isNaN(fxu)) {
+  if (isNaN(fxa) || isNaN(fxb)) {
     throw new Error('La función no se pudo evaluar en los límites del intervalo.');
   }
 
-  if (fxl * fxu > 0) {
-    throw new Error('f(xl) y f(xu) tienen el mismo signo — no hay cambio de signo en el intervalo.');
+  if (fxa * fxb > 0) {
+    throw new Error('f(xa) y f(xb) tienen el mismo signo — no hay cambio de signo en el intervalo.');
   }
 
   let xr_prev: number | null = null;
@@ -39,13 +39,13 @@ export function runClosedMethod(
   for (let i = 1; i <= imax; i++) {
     let xr = 0;
     if (method === 'biseccion') {
-      xr = (xl + xu) / 2;
+      xr = (xa + xb) / 2;
     } else {
-      const denom = fxu - fxl;
+      const denom = fxb - fxa;
       if (Math.abs(denom) < 1e-15) {
-        throw new Error('División por cero detectada: f(xl) y f(xu) son prácticamente iguales.');
+        throw new Error('División por cero detectada: f(xa) y f(xb) son prácticamente iguales.');
       }
-      xr = xu - (fxu * (xu - xl)) / denom;
+      xr = xb - (fxb * (xb - xa)) / denom;
     }
 
     const fxr = evalFn(expr, xr);
@@ -55,17 +55,17 @@ export function runClosedMethod(
 
     const ea = xr_prev !== null && xr !== 0 ? Math.abs((xr - xr_prev) / xr) * 100 : null;
 
-    iters.push({ i, xl, xu, xr, fxr, ea });
+    iters.push({ i, xa, xb, xr, fxr, ea });
 
     if (ea !== null && ea < es) break;
 
-    const prod = fxl * fxr;
+    const prod = fxa * fxr;
     if (prod < 0) {
-      xu = xr;
-      fxu = fxr;
+      xb = xr;
+      fxb = fxr;
     } else if (prod > 0) {
-      xl = xr;
-      fxl = fxr;
+      xa = xr;
+      fxa = fxr;
     } else {
       break; // Raíz exacta encontrada
     }

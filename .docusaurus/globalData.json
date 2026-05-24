@@ -36,38 +36,38 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "parte-2-raices-ecuaciones/cap05-metodos-cerrados/biseccion",
-              "path": "/parte-2-raices-ecuaciones/cap05-metodos-cerrados/biseccion",
+              "id": "parte-2-raices-ecuaciones/cap5-metodos-cerrados/biseccion",
+              "path": "/parte-2-raices-ecuaciones/cap5-metodos-cerrados/biseccion",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "parte-2-raices-ecuaciones/cap05-metodos-cerrados/comparativa",
-              "path": "/parte-2-raices-ecuaciones/cap05-metodos-cerrados/comparativa",
+              "id": "parte-2-raices-ecuaciones/cap5-metodos-cerrados/comparativa",
+              "path": "/parte-2-raices-ecuaciones/cap5-metodos-cerrados/comparativa",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "parte-2-raices-ecuaciones/cap05-metodos-cerrados/falsa-posicion",
-              "path": "/parte-2-raices-ecuaciones/cap05-metodos-cerrados/falsa-posicion",
+              "id": "parte-2-raices-ecuaciones/cap5-metodos-cerrados/falsa-posicion",
+              "path": "/parte-2-raices-ecuaciones/cap5-metodos-cerrados/falsa-posicion",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "parte-2-raices-ecuaciones/cap06-metodos-abiertos/comparativa",
-              "path": "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/comparativa",
+              "id": "parte-2-raices-ecuaciones/cap6-metodos-abiertos/comparativa",
+              "path": "/parte-2-raices-ecuaciones/cap6-metodos-abiertos/comparativa",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "parte-2-raices-ecuaciones/cap06-metodos-abiertos/newton-raphson",
-              "path": "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/newton-raphson",
+              "id": "parte-2-raices-ecuaciones/cap6-metodos-abiertos/newton-raphson",
+              "path": "/parte-2-raices-ecuaciones/cap6-metodos-abiertos/newton-raphson",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "parte-2-raices-ecuaciones/cap06-metodos-abiertos/punto-fijo",
-              "path": "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/punto-fijo",
+              "id": "parte-2-raices-ecuaciones/cap6-metodos-abiertos/punto-fijo",
+              "path": "/parte-2-raices-ecuaciones/cap6-metodos-abiertos/punto-fijo",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "parte-2-raices-ecuaciones/cap06-metodos-abiertos/secante",
-              "path": "/parte-2-raices-ecuaciones/cap06-metodos-abiertos/secante",
+              "id": "parte-2-raices-ecuaciones/cap6-metodos-abiertos/secante",
+              "path": "/parte-2-raices-ecuaciones/cap6-metodos-abiertos/secante",
               "sidebar": "tutorialSidebar"
             },
             {
@@ -216,13 +216,13 @@
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/cap6",
-              "path": "/cap6",
+              "id": "/cap5",
+              "path": "/cap5",
               "sidebar": "tutorialSidebar"
             },
             {
-              "id": "/cap5",
-              "path": "/cap5",
+              "id": "/cap6",
+              "path": "/cap6",
               "sidebar": "tutorialSidebar"
             },
             {

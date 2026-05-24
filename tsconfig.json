@@ -5,5 +5,8 @@
     "baseUrl": ".",
     "strict": true
   },
-  "exclude": [".docusaurus", "build"]
+  "exclude": [
+    ".docusaurus",
+    "build"
+  ]
 }
