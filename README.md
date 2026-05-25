@@ -4,6 +4,83 @@ Una plataforma de documentación interactiva y educativa de alto rendimiento dis
 
 ---
 
+# 🤝 Guía de Colaboración (AI-Assisted)
+
+Esta guía explica cómo colaborar en la documentación usando la Inteligencia Artificial y las herramientas visuales para guardar tus cambios de manera sencilla.
+
+## 1. Instalación Rápida
+1.  **Git**: [Descargar aquí](https://git-scm.com/)
+2.  **Antigravity IDE**: Tu herramienta de trabajo.
+3.  **Node.js**: [Descargar aquí](https://nodejs.org/) (Versión 20 o superior).
+
+## 2. Iniciar el Proyecto
+Abre la terminal en Antigravity (`Ctrl + ñ` o a través del menú de Terminal) y escribe:
+```bash
+git clone https://github.com/fernando-aguilar-coro/ossu-electronic.git
+npm install
+npm run start
+```
+
+## 3. Cómo Colaborar con la IA
+Usa el chat de **Antigravity** para pedir cambios. No necesitas escribir código complejo, solo explica lo que quieres en tu idioma natural.
+
+**Ejemplo:** *"Antigravity, agrega el capítulo 5 sobre Bisección con este texto [pegar texto]"*.
+
+---
+
+## 4. Guardar y Enviar Cambios (Interfaz Visual)
+
+En lugar de usar comandos de terminal difíciles, aprovecha los botones de la interfaz de usuario:
+
+### Paso 1: Crear una Rama (Tu espacio)
+En la esquina inferior izquierda del IDE, haz clic donde dice `main` y selecciona **"Create new branch..."**. Dale un nombre descriptivo a tu rama (ej: `nuevo-capitulo-biseccion`).
+
+### Paso 2: Guardar (Commit)
+1.  Haz clic en el icono de **Source Control** (control de código fuente) en la barra lateral izquierda (el icono que parece un diagrama de ramas con nodos).
+2.  Escribe un mensaje breve sobre lo que hiciste en el cuadro de texto (ej: "Agregué la teoría del método de bisección").
+3.  Haz clic en el botón azul **"Commit"**.
+
+### Paso 3: Subir (Push)
+Haz clic en el botón **"Publish Branch"** o en las flechas de sincronización circulares que aparecerán abajo. Esto subirá tus cambios a tu repositorio remoto de forma segura.
+
+### Paso 4: Solicitar Revisión (Pull Request)
+1.  Entra a [GitHub: ossu-electronic](https://github.com/fernando-aguilar-coro/ossu-electronic).
+2.  Verás un aviso amarillo llamativo que dice **"Compare & pull request"**. Haz clic ahí.
+3.  Haz clic en el botón verde **"Create pull request"** y ¡listo! El administrador revisará e integrará tus aportes.
+
+---
+
+## ✅ Beneficios de este método
+*   **Seguridad**: Tus cambios no afectan el sitio web principal hasta que el equipo los revise y apruebe.
+*   **Fácil**: Todo el proceso se completa con botones de la interfaz gráfica y lenguaje natural con la IA.
+*   **Colaborativo**: Recibirás ayuda, retroalimentación y correcciones de estilo del equipo directamente en GitHub.
+
+---
+
+## ⚡ Anexo: Resumen de Comandos (Terminal)
+
+Si prefieres trabajar directamente con la consola de comandos en lugar de usar la interfaz visual del IDE, estos son los pasos equivalentes:
+
+```bash
+# 1. Asegurarte de estar al día con la rama principal
+git pull origin main
+
+# 2. Crear y cambiarte a tu rama de trabajo
+git checkout -b nombre-de-tu-rama
+
+# 3. Registrar y guardar tus cambios locales
+git add .
+git commit -m "Descripción clara de lo que hiciste"
+
+# 4. Subir tus cambios al repositorio remoto
+git push origin nombre-de-tu-rama
+```
+*Una vez finalizado, ingresa a la página web de GitHub para crear el Pull Request manualmente.*
+
+---
+
+# 📖 Especificaciones Técnicas del Proyecto
+
 ## 🌟 Características Clave
 
 *   **Consola de Simulación Interactiva (Playground)**: Un panel interactivo directamente en la página de inicio que permite alternar y probar diferentes familias de algoritmos en tiempo real.
@@ -94,57 +171,6 @@ El proyecto cuenta con cuatro suites interactivas principales de simulación:
     *   **Regla del Trapecio**: Aproximación del área bajo la curva mediante trapecios simples o múltiples.
     *   **Regla de Simpson 1/3**: Ajuste parabólico para aproximar áreas de segmentos.
     *   **Regla de Simpson 3/8**: Ajuste cúbico para una mayor precisión.
-
----
-
-## 🛠️ Guía de Desarrollo y Ejecución
-
-### 1. Requisitos Previos
-*   **Node.js**: Versión `20.0` o superior.
-*   **npm**: Gestor de paquetes incluido con Node.js.
-
-### 2. Instalación y Ejecución en Local
-
-Clona el repositorio e instala las dependencias necesarias:
-
-```bash
-# Instalar las dependencias del proyecto
-npm install
-
-# Iniciar el servidor local de desarrollo
-npm run start
-```
-
-El simulador interactivo se abrirá automáticamente en tu navegador web predeterminado en `http://localhost:3000`.
-
-### 3. Cómo Agregar Nuevos Capítulos a la Documentación
-Toda la teoría se gestiona dentro de la carpeta `/docs`.
-1.  **Ubicación**: Ve a la subcarpeta correspondiente (ej. `/docs/parte-2-raices-ecuaciones`).
-2.  **Archivos**: Modifica o crea un archivo `.md` (Markdown estándar) o `.mdx` (si deseas usar elementos de React interactivos).
-3.  **Configuración**: Utiliza el bloque inicial (frontmatter) para definir la identidad del documento:
-    ```markdown
-    ---
-    id: mi-metodo
-    title: Método de Newton
-    sidebar_label: Newton
-    sidebar_position: 2
-    ---
-    ```
-
-### 4. Cómo Integrar Simuladores en un Archivo MDX
-Puedes embeber un simulador directamente en cualquier página teórica importando el componente correspondiente de React:
-
-```mdx
-import ClosedMethodsSim from '@site/src/components/simulations/ClosedMethodsSim';
-
-# Análisis de Bisección
-
-Teoría detallada del método aquí...
-
-## Simulador
-
-<ClosedMethodsSim defaultMethod="biseccion" defaultExpr="x^2 - 3" />
-```
 
 ---
 
