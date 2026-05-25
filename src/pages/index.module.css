@@ -432,3 +432,126 @@
 [data-theme='light'] .ctaText {
   color: #475569;
 }
+
+/* ── Playground Section ────────────────────────────────────────────────────── */
+.playgroundSection {
+  padding: 5rem 2rem;
+  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+  position: relative;
+}
+
+[data-theme='light'] .playgroundSection {
+  background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.04) 0%, transparent 60%);
+}
+
+.playgroundContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tabsWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tabsNav {
+  display: flex;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(10px);
+  padding: 6px;
+  border-radius: 16px;
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+[data-theme='light'] .tabsNav {
+  background: rgba(241, 245, 249, 0.85);
+  border-color: rgba(203, 213, 225, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  color: #94a3b8;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme='light'] .tabBtn {
+  color: #475569;
+}
+
+.tabBtn:hover {
+  background: rgba(99, 102, 241, 0.08);
+  color: #f1f5f9;
+}
+
+[data-theme='light'] .tabBtn:hover {
+  background: rgba(99, 102, 241, 0.05);
+  color: #0f172a;
+}
+
+.tabBtnActive {
+  background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+}
+
+.tabIcon {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.tabTitle {
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: block;
+}
+
+.tabSub {
+  font-size: 0.72rem;
+  opacity: 0.75;
+  font-weight: 500;
+  display: block;
+  margin-top: 2px;
+}
+
+.tabPanel {
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  padding: 1.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+[data-theme='light'] .tabPanel {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(226, 232, 240, 0.8);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+}
+
+/* Simple fade in animation for tab change */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tabPanel > div {
+  animation: fadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+

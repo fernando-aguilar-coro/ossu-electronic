@@ -4,6 +4,8 @@ sidebar_label: "Cap. 21: Newton-Cotes"
 sidebar_position: 1
 ---
 
+import IntegrationSim from '@site/src/components/simulations/IntegrationSim';
+
 # Capítulo 21: Fórmulas de Integración de Newton-Cotes
 
 ## Idea general
@@ -117,3 +119,14 @@ donde $p$ es el orden del método. Esto es la base de la **extrapolación de Ric
 :::tip Integración adaptativa
 Usar subdivisiones más finas solo donde $f$ varía rápidamente. Esto reduce el número de evaluaciones de $f$ para una precisión dada.
 :::
+
+---
+
+## 🎮 Simulación Interactiva en Tiempo Real
+
+Utiliza el siguiente simulador para explorar geométricamente las **Fórmulas de Newton-Cotes**: **Regla del Trapecio**, **Simpson 1/3** y **Simpson 3/8**. 
+
+Prueba a integrar la función clásica del ejemplo del capítulo, $\sin(x)$ en el rango $[0, \pi]$ con $N = 4$ y compara la exactitud de los diferentes métodos:
+
+<IntegrationSim />
+

@@ -1,9 +1,15 @@
-import type { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
 import chapters from '../data/chapters.json';
+
+// Import simulations
+import ClosedMethodsSim from '../components/simulations/ClosedMethodsSim';
+import OpenMethodsSim from '../components/simulations/OpenMethodsSim';
+import InterpolationSim from '../components/simulations/InterpolationSim';
+import IntegrationSim from '../components/simulations/IntegrationSim';
 
 const features = [
   {
@@ -95,6 +101,92 @@ function Features() {
   );
 }
 
+// ── Playground Section ────────────────────────────────────────────────────────
+function SimulationsPlayground() {
+  const [activeTab, setActiveTab] = useState<'closed' | 'open' | 'interpolation' | 'integration'>('closed');
+
+  return (
+    <section className={styles.playgroundSection}>
+      <div className={styles.playgroundContainer}>
+        <h2 className={styles.sectionTitle}>🎯 Consola de Simulación Interactiva</h2>
+        <p className={styles.sectionSubtitle}>
+          Experimenta con los algoritmos numéricos en tiempo real. Ajusta los parámetros, observa la convergencia y visualiza el comportamiento geométrico directamente desde tu navegador.
+        </p>
+
+        {/* Pill-tab navigator */}
+        <div className={styles.tabsWrapper}>
+          <div className={styles.tabsNav}>
+            <button
+              className={`${styles.tabBtn} ${activeTab === 'closed' ? styles.tabBtnActive : ''}`}
+              onClick={() => setActiveTab('closed')}
+            >
+              <span className={styles.tabIcon}>⟨⟩</span>
+              <div>
+                <span className={styles.tabTitle}>Métodos Cerrados</span>
+                <span className={styles.tabSub}>Bisección & Falsa Posición</span>
+              </div>
+            </button>
+            <button
+              className={`${styles.tabBtn} ${activeTab === 'open' ? styles.tabBtnActive : ''}`}
+              onClick={() => setActiveTab('open')}
+            >
+              <span className={styles.tabIcon}>∞</span>
+              <div>
+                <span className={styles.tabTitle}>Métodos Abiertos</span>
+                <span className={styles.tabSub}>Newton, Secante & Punto Fijo</span>
+              </div>
+            </button>
+            <button
+              className={`${styles.tabBtn} ${activeTab === 'interpolation' ? styles.tabBtnActive : ''}`}
+              onClick={() => setActiveTab('interpolation')}
+            >
+              <span className={styles.tabIcon}>⋯</span>
+              <div>
+                <span className={styles.tabTitle}>Interpolación & Splines</span>
+                <span className={styles.tabSub}>Newton, Lagrange & Splines Cúbicos</span>
+              </div>
+            </button>
+            <button
+              className={`${styles.tabBtn} ${activeTab === 'integration' ? styles.tabBtnActive : ''}`}
+              onClick={() => setActiveTab('integration')}
+            >
+              <span className={styles.tabIcon}>∫</span>
+              <div>
+                <span className={styles.tabTitle}>Integración Numérica</span>
+                <span className={styles.tabSub}>Trapecio & Reglas de Simpson</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Tab Content Panel */}
+        <div className={styles.tabPanel}>
+          {activeTab === 'closed' && (
+            <div>
+              <ClosedMethodsSim defaultExpr="x^2 - 3" defaultXa="1" defaultXb="2" />
+            </div>
+          )}
+          {activeTab === 'open' && (
+            <div>
+              <OpenMethodsSim defaultExpr="x^(1/3) " defaultX0="1.5" />
+            </div>
+          )}
+          {activeTab === 'interpolation' && (
+            <div>
+              <InterpolationSim />
+            </div>
+          )}
+          {activeTab === 'integration' && (
+            <div>
+              <IntegrationSim />
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Page ───────────────────────────────────────────────────────────────────────
 export default function Home(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
@@ -115,18 +207,9 @@ export default function Home(): ReactNode {
           </div>
         </section>
 
-        <Features />
+        <SimulationsPlayground />
 
-        <section className={styles.cta}>
-          <h2 className={styles.ctaTitle}>Empieza por el Capítulo 5</h2>
-          <p className={styles.ctaText}>
-            Los métodos cerrados son la base de la búsqueda de raíces.
-            Aprende bisección y falsa posición con fundamentos matemáticos completos.
-          </p>
-          <Link className={styles.ctaPrimary} to="/cap5">
-            Ir al Capítulo 5 →
-          </Link>
-        </section>
+        <Features />
       </main>
     </Layout>
   );

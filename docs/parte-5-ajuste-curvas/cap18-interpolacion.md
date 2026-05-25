@@ -4,6 +4,8 @@ sidebar_label: "Cap. 18: Interpolación"
 sidebar_position: 1
 ---
 
+import InterpolationSim from '@site/src/components/simulations/InterpolationSim';
+
 # Capítulo 18: Interpolación
 
 ## Diferencia entre regresión e interpolación
@@ -111,3 +113,18 @@ $$
 :::tip
 Los splines cúbicos dan interpolaciones mucho más suaves y estables que los polinomios de alto grado, especialmente para más de ~7 puntos.
 :::
+
+---
+
+## 🎮 Simulación Interactiva en Tiempo Real
+
+Utiliza el siguiente simulador para comparar interactivamente los métodos de **Newton**, **Lagrange** y **Splines Cúbicos**.
+
+Experimenta con el **Fenómeno de Runge**:
+1. Activa el modo **"Función Analítica"**.
+2. Usa la función por defecto $1 / (1 + 25x^2)$ con **9 o más nodos equiespaciados** y observa las oscilaciones extremas en los bordes para Newton/Lagrange.
+3. Cambia la distribución de nodos a **"Nodos de Chebyshev"** para ver cómo se minimiza drásticamente el error de oscilación.
+4. Alterna a **"Splines Cúbicos"** para ver una aproximación extremadamente suave y estable por tramos.
+
+<InterpolationSim />
+
