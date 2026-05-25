@@ -197,6 +197,7 @@ export default function Home(): ReactNode {
     >
       <main className={styles.main}>
         <Hero />
+        <SimulationsPlayground />
 
         <section className={styles.chapters}>
           <h2 className={styles.sectionTitle}>Capítulos</h2>
@@ -207,7 +208,6 @@ export default function Home(): ReactNode {
           </div>
         </section>
 
-        <SimulationsPlayground />
 
         <Features />
       </main>
