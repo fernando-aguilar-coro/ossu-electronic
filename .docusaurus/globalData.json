@@ -11,6 +11,11 @@
           "mainDocId": "intro",
           "docs": [
             {
+              "id": "guia-expresiones-matematicas",
+              "path": "/guia-expresiones-matematicas",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "intro",
               "path": "/intro",
               "sidebar": "tutorialSidebar"

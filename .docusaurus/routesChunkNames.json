@@ -13,17 +13,17 @@
     },
     "config": "5e9f5e1a"
   },
-  "/-e71": {
+  "/-627": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/-de7": {
+  "/-e6e": {
     "__comp": "a7bd4aaa",
     "__props": "22dd74f7"
   },
-  "/-469": {
+  "/-1be": {
     "__comp": "a94703ab"
   },
   "/cap5-52c": {
@@ -41,6 +41,10 @@
   "/cap8-a7e": {
     "__comp": "14eb3368",
     "__props": "d370010f"
+  },
+  "/guia-expresiones-matematicas-88a": {
+    "__comp": "17896441",
+    "content": "52aaccac"
   },
   "/intro-9fa": {
     "__comp": "17896441",

@@ -14,15 +14,15 @@ export default [
   },
   {
     path: '/',
-    component: ComponentCreator('/', 'e71'),
+    component: ComponentCreator('/', '627'),
     routes: [
       {
         path: '/',
-        component: ComponentCreator('/', 'de7'),
+        component: ComponentCreator('/', 'e6e'),
         routes: [
           {
             path: '/',
-            component: ComponentCreator('/', '469'),
+            component: ComponentCreator('/', '1be'),
             routes: [
               {
                 path: '/cap5',
@@ -45,6 +45,12 @@ export default [
               {
                 path: '/cap8',
                 component: ComponentCreator('/cap8', 'a7e'),
+                exact: true,
+                sidebar: "tutorialSidebar"
+              },
+              {
+                path: '/guia-expresiones-matematicas',
+                component: ComponentCreator('/guia-expresiones-matematicas', '88a'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               },
