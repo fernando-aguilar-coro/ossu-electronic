@@ -4,6 +4,7 @@ sidebar_label: "Cap. 12: Casos: Álgebra Lineal"
 sidebar_position: 1
 ---
 
+
 # Capítulo 12: Estudio de Casos — Ecuaciones Algebraicas Lineales
 
 ## Caso 1: Análisis de circuitos (Ley de Kirchhoff)
@@ -15,6 +16,12 @@ $$
 $$
 
 La matriz de resistencias es **simétrica y diagonal dominante** → Cholesky o Gauss-Seidel convergen.
+
+:::tip 🎮 Simulación de Circuitos Interactiva
+Hemos creado un laboratorio interactivo en 2D completo para modelar circuitos eléctricos lineales, resolviendo el sistema $A \cdot V = B$ de voltajes nodales (KCL) mediante los solucionadores iterativos de **Jacobi** y **Gauss-Seidel** o de forma exacta mediante **Eliminación de Gauss-Jordan**.
+
+👉 [**Ir al Simulador de Circuitos en Tiempo Real**](/simulaciones)
+:::
 
 ---
 
@@ -56,7 +63,9 @@ $$
 A H = hf(Q) \quad \text{(pérdidas de carga)}
 $$
 
-El sistema resultante es **no lineal** → linearización iterativa (Newton-Raphson multivariable).
+El sistema resultante es **no lineal** (debido a la fricción cuadrática en fluidos reales), pero se puede aproximar de manera excelente mediante una red linealizada de conductancias donde resolvemos las presiones en cada nodo intermedio planteando un balance de masa.
+
+
 
 ---
 

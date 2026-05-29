@@ -50,6 +50,9 @@ function Hero() {
           <Link className={styles.ctaSecondary} to="/cap5">
             Métodos Cerrados (Cap. 5)
           </Link>
+          <Link className={styles.ctaPrimary} style={{ background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)', border: 'none', boxShadow: '0 4px 15px rgba(99, 102, 241, 0.4)' }} to="/simulaciones">
+            ⚡ Simulaciones Especiales
+          </Link>
         </div>
       </div>
       <div className={styles.heroFormula} aria-hidden="true">
@@ -168,7 +171,7 @@ function SimulationsPlayground() {
           )}
           {activeTab === 'open' && (
             <div>
-              <OpenMethodsSim defaultExpr="x^(1/3) " defaultX0="1.5" />
+              <OpenMethodsSim defaultX0="1.5" />
             </div>
           )}
           {activeTab === 'interpolation' && (

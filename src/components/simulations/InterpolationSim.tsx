@@ -340,8 +340,10 @@ export default function InterpolationSim() {
     const canvas = canvasRef.current;
     if (!canvas) return null;
     const rect = canvas.getBoundingClientRect();
-    const px = e.clientX - rect.left;
-    const py = e.clientY - rect.top;
+    
+    // Scale pointer event coordinates to match internal canvas resolution
+    const px = (e.clientX - rect.left) * (canvas.width / rect.width);
+    const py = (e.clientY - rect.top) * (canvas.height / rect.height);
 
     const PAD = { top: 25, right: 30, bottom: 40, left: 55 };
     const plotW = canvas.width - PAD.left - PAD.right;

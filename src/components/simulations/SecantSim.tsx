@@ -23,9 +23,9 @@ interface SecantSimProps {
 }
 
 export default function SecantSim({
-  defaultExpr = 'exp(-x) - x',
+  defaultExpr = 'x**3 + 7',
   defaultX0 = '0',
-  defaultX1 = '1',
+  defaultX1 = '-2',
   defaultEs = '0.01',
   defaultImax = '20',
 }: SecantSimProps) {
@@ -168,8 +168,8 @@ export default function SecantSim({
               value={expr}
               onChange={e => setExpr(e.target.value)}
               disabled={playing}
-              placeholder="exp(-x) - x"
-              description="Disponible: x^2, exp(x), ln(x), sin(x), cos(x), tan(x), sqrt(x). Soporta ^."
+              placeholder="x**3 + 7"
+              description="Operadores: +, -, *, /, ^ (o **). Funciones: sin, cos, tan, log, ln, exp, sqrt, abs, sinh, etc. Constantes: pi, e."
             />
           </div>
 
@@ -227,7 +227,7 @@ export default function SecantSim({
       </Card>
 
       {/* Chart Section */}
-      {iterations.length > 0 && (
+      {expr && expr.trim() !== '' && (
         <Card>
           <div
             style={{

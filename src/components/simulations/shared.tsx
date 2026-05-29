@@ -6,6 +6,9 @@ export { SimulationTable }     from './SimulationTable';
 export { Latex }                from './Latex';
 export { default as InterpolationSim } from './InterpolationSim';
 export { default as IntegrationSim } from './IntegrationSim';
+export { default as CircuitSim } from './CircuitSim';
+export { default as PageRankSim } from './PageRankSim';
+export { default as PendulumSim } from './PendulumSim';
 export {
   Dot,
   InputField,

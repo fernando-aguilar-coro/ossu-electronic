@@ -169,7 +169,7 @@ export default function BisectionSim({
               onChange={e => setExpr(e.target.value)}
               disabled={playing}
               placeholder="exp(-x) - x"
-              description="Disponible: x^2, exp(x), ln(x), sin(x), cos(x), tan(x), sqrt(x), abs(x). Soporta potencias con ^."
+              description="Operadores: +, -, *, /, ^ (o **). Funciones: sin, cos, tan, log, ln, exp, sqrt, abs, sinh, etc. Constantes: pi, e."
             />
           </div>
           <InputField
@@ -214,7 +214,7 @@ export default function BisectionSim({
         {error && <SimulationError error={error} />}
       </Card>
 
-      {iterations.length > 0 && (
+      {expr && expr.trim() !== '' && (
         <Card>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, flexWrap: 'wrap', gap: 6 }}>
             <span style={{ fontWeight: 700, fontSize: 15, color: 'var(--ifm-font-color-base)' }}>

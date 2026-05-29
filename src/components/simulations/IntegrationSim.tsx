@@ -426,7 +426,9 @@ export default function IntegrationSim() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
-    const px = e.clientX - rect.left;
+    
+    // Scale client mouse coordinates to match internal canvas resolution
+    const px = (e.clientX - rect.left) * (canvas.width / rect.width);
 
     const PAD = { top: 25, right: 30, bottom: 40, left: 55 };
     const plotW = canvas.width - PAD.left - PAD.right;

@@ -166,7 +166,7 @@ export default function FixedPointSim({
               onChange={e => setExpr(e.target.value)}
               disabled={playing}
               placeholder="exp(-x)"
-              description="Disponible: x^2, exp(x), ln(x), sin(x), cos(x), tan(x), sqrt(x). Soporta ^."
+              description="Operadores: +, -, *, /, ^ (o **). Funciones: sin, cos, tan, log, ln, exp, sqrt, abs, sinh, etc. Constantes: pi, e."
             />
           </div>
 
@@ -215,7 +215,7 @@ export default function FixedPointSim({
       </Card>
 
       {/* Chart Section */}
-      {iterations.length > 0 && (
+      {expr && expr.trim() !== '' && (
         <Card>
           <div
             style={{
