@@ -38,6 +38,11 @@ export default [
     exact: true
   },
   {
+    path: '/juego',
+    component: ComponentCreator('/juego', '1aa'),
+    exact: true
+  },
+  {
     path: '/markdown-page',
     component: ComponentCreator('/markdown-page', '53a'),
     exact: true

@@ -53,6 +53,9 @@ function Hero() {
           <Link className={styles.ctaPrimary} style={{ background: 'linear-gradient(135deg, #6366f1 0%, #a855f7 100%)', border: 'none', boxShadow: '0 4px 15px rgba(99, 102, 241, 0.4)' }} to="/simulaciones">
             ⚡ Simulaciones Especiales
           </Link>
+          <Link className={styles.ctaPrimary} style={{ background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', border: 'none', boxShadow: '0 4px 15px rgba(16, 185, 129, 0.4)' }} to="/juego">
+            🎮 Probar Juego
+          </Link>
         </div>
       </div>
       <div className={styles.heroFormula} aria-hidden="true">

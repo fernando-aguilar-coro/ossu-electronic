@@ -42,6 +42,13 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
+  "/juego-1aa": {
+    "__comp": "__comp---site-src-pages-juego-tsxa-91-13c",
+    "__context": {
+      "plugin": "plugin---markdown-pagea-74-7b5"
+    },
+    "config": "config---simulaciones-5-e-9-54f"
+  },
   "/markdown-page-53a": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",
     "__context": {

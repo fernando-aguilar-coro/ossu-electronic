@@ -1,9 +1,9 @@
 // Barrel — re-exporta todos los componentes compartidos de las simulaciones
-export { Card }                from './Card';
-export { SimulationControls }  from './SimulationControls';
-export { SimulationCanvas }    from './SimulationCanvas';
-export { SimulationTable }     from './SimulationTable';
-export { Latex }                from './Latex';
+export { Card } from './Card';
+export { SimulationControls } from './SimulationControls';
+export { SimulationCanvas } from './SimulationCanvas';
+export { SimulationTable } from './SimulationTable';
+export { Latex } from './Latex';
 export { default as InterpolationSim } from './InterpolationSim';
 export { default as IntegrationSim } from './IntegrationSim';
 export { default as CircuitSim } from './CircuitSim';

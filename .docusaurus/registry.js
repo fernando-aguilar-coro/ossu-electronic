@@ -1,5 +1,6 @@
 export default {
   "__comp---site-src-pages-index-tsx-1-df-d3e": [() => import(/* webpackChunkName: "__comp---site-src-pages-index-tsx-1-df-d3e" */ "@site/src/pages/index.tsx"), "@site/src/pages/index.tsx", require.resolveWeak("@site/src/pages/index.tsx")],
+  "__comp---site-src-pages-juego-tsxa-91-13c": [() => import(/* webpackChunkName: "__comp---site-src-pages-juego-tsxa-91-13c" */ "@site/src/pages/juego.tsx"), "@site/src/pages/juego.tsx", require.resolveWeak("@site/src/pages/juego.tsx")],
   "__comp---site-src-pages-simulaciones-tsxe-0-f-85e": [() => import(/* webpackChunkName: "__comp---site-src-pages-simulaciones-tsxe-0-f-85e" */ "@site/src/pages/simulaciones.tsx"), "@site/src/pages/simulaciones.tsx", require.resolveWeak("@site/src/pages/simulaciones.tsx")],
   "__comp---theme-debug-config-23-a-2ff": [() => import(/* webpackChunkName: "__comp---theme-debug-config-23-a-2ff" */ "@theme/DebugConfig"), "@theme/DebugConfig", require.resolveWeak("@theme/DebugConfig")],
   "__comp---theme-debug-contentba-8-ce7": [() => import(/* webpackChunkName: "__comp---theme-debug-contentba-8-ce7" */ "@theme/DebugContent"), "@theme/DebugContent", require.resolveWeak("@theme/DebugContent")],
