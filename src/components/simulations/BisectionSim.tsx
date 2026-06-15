@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { evalFn } from '../../services/mathUtils';
+import { evalFn, getLaTeX } from '../../services/mathUtils';
 import { runClosedMethod, Iteration } from '../../services/closedMethods';
 import { useAnimationPlayer } from '../../hooks/useAnimationPlayer';
 import {
@@ -67,8 +67,9 @@ export default function BisectionSim({
       const res = runClosedMethod('biseccion', expr, xa, xb, es, imax);
       setIterations(res);
     } catch (e) {
-      setError((e as Error).message);
-      setIterations([]);
+      const err = e as any;
+      setError(err.message);
+      setIterations(err.iterations || []);
     }
   }, [expr, xaStr, xbStr, esStr, imaxStr, reset]);
 
@@ -171,6 +172,14 @@ export default function BisectionSim({
               placeholder="exp(-x) - x"
               description="Operadores: +, -, *, /, ^ (o **). Funciones: sin, cos, tan, log, ln, exp, sqrt, abs, sinh, etc. Constantes: pi, e."
             />
+            {expr && expr.trim() !== '' && (
+              <div style={{ marginTop: 8, padding: '8px 12px', background: 'var(--ifm-background-color)', borderRadius: 6, border: '1px solid var(--ifm-toc-border-color)', fontSize: 12 }}>
+                <span style={{ fontWeight: 700, fontSize: 10, color: 'var(--ifm-color-primary)', display: 'block', marginBottom: 4, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vista previa LaTeX:</span>
+                <div style={{ display: 'flex', justifyContent: 'center', padding: '4px 0', overflowX: 'auto' }}>
+                  <Latex>{`f(x) = ${getLaTeX(expr) || '\\text{escribiendo...}'}`}</Latex>
+                </div>
+              </div>
+            )}
           </div>
           <InputField
             label={<><Latex>x_a</Latex> (lím. inf.)</>}
@@ -266,8 +275,10 @@ export default function BisectionSim({
           ]}
           minWidth="680px"
         >
-          {iterations.slice(0, step).map(it => (
-            <tr key={it.i} style={{ borderBottom: '1px solid var(--ifm-toc-border-color)' }}>
+          {iterations.slice(0, step).map(it => {
+            const isConverged = it.ea != null && it.ea < parseFloat(esStr);
+            return (
+              <tr key={it.i} className={isConverged ? 'converged-row' : ''} style={{ borderBottom: '1px solid var(--ifm-toc-border-color)' }}>
               <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.i}</td>
               <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.xa.toFixed(6)}</td>
               <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{evalFn(expr, it.xa).toExponential(3)}</td>
@@ -288,8 +299,9 @@ export default function BisectionSim({
                 {it.ea != null ? it.ea.toFixed(4) : '—'}
               </td>
             </tr>
-          ))}
-        </SimulationTable>
+          );
+        })}
+      </SimulationTable>
       )}
     </div>
   );

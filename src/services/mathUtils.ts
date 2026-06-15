@@ -57,3 +57,17 @@ export function getDerivative(expr: string): { exprStr: string; evalDeriv: (x: n
     };
   }
 }
+
+/**
+ * Returns the LaTeX representation of a mathjs expression string.
+ */
+export function getLaTeX(expr: string): string {
+  if (!expr || expr.trim() === '') return '';
+  try {
+    const normalized = expr.replace(/\*\*/g, '^');
+    return math.parse(normalized).toTex();
+  } catch {
+    return '';
+  }
+}
+

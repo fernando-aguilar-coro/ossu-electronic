@@ -28,14 +28,14 @@ export function SimulationControls({ playing, hasIterations, step, totalSteps, o
   return (
     <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center', width: '100%' }}>
       {isIdle ? (
-        <button style={btn(true)} onClick={onPlay}>▶ Calcular</button>
+        <button className="sim-btn" style={btn(true)} onClick={onPlay}>▶ Calcular</button>
       ) : (
         <>
-          {!playing && step < totalSteps && <button style={btn(true)} onClick={onPlay}>{step > 1 ? '▶ Continuar' : '▶ Calcular'}</button>}
-          {!playing && step >= totalSteps && <button style={btn(true)} onClick={onReset}>🔄 Reiniciar</button>}
-          {playing && <button style={btn(false)} onClick={onPause}>⏸ Pausar</button>}
-          <button style={btn(false)} onClick={onPrev} disabled={step <= 1}>← Ant.</button>
-          <button style={btn(false)} onClick={onNext} disabled={step >= totalSteps}>Sig. →</button>
+          {!playing && step < totalSteps && <button className="sim-btn" style={btn(true)} onClick={onPlay}>{step > 1 ? '▶ Continuar' : '▶ Calcular'}</button>}
+          {!playing && step >= totalSteps && <button className="sim-btn" style={btn(true)} onClick={onReset}>🔄 Reiniciar</button>}
+          {playing && <button className="sim-btn" style={btn(false)} onClick={onPause}>⏸ Pausar</button>}
+          <button className="sim-btn" style={btn(false)} onClick={onPrev} disabled={step <= 1}>← Ant.</button>
+          <button className="sim-btn" style={btn(false)} onClick={onNext} disabled={step >= totalSteps}>Sig. →</button>
           <span style={{ fontSize: 13, color: 'var(--ifm-font-color-base)', marginLeft: 'auto', fontWeight: 500 }}>
             Iteración {step} / {totalSteps}
           </span>

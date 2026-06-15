@@ -16,10 +16,30 @@ export interface SimulationCanvasProps {
 }
 
 export function SimulationCanvas({ expr, centerX, defaultRange, includeIdentity = false, onDrawOverlay }: SimulationCanvasProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [zoom, setZoom] = useState(1);
+  const [size, setSize] = useState({ width: 700, height: 280 });
 
   useEffect(() => { setZoom(1); }, [centerX]);
+
+  // ResizeObserver to make canvas fully responsive
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const width = entry.contentRect.width || 700;
+        // Keep a stable 2.5:1 aspect ratio
+        const height = width / 2.5;
+        setSize({ width, height });
+      }
+    });
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   const zoomFactor = isNaN(zoom) || zoom <= 0 ? 1 : zoom;
   const cx = isNaN(centerX) ? 0 : centerX;
@@ -33,8 +53,15 @@ export function SimulationCanvas({ expr, centerX, defaultRange, includeIdentity 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const W = canvas.width;
-    const H = canvas.height;
+    const dpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+    const W = size.width;
+    const H = size.height;
+    
+    // Scale for high-DPI (Retina) screens
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.scale(dpr, dpr);
+
     const PAD = { top: 20, right: 20, bottom: 40, left: 55 };
     const plotW = W - PAD.left - PAD.right;
     const plotH = H - PAD.top - PAD.bottom;
@@ -124,12 +151,12 @@ export function SimulationCanvas({ expr, centerX, defaultRange, includeIdentity 
     for (let g = 0; g <= 5; g++) ctx.fillText((xMin + (g / 5) * (xMax - xMin)).toFixed(2), PAD.left + (g / 5) * plotW, H - 8);
     ctx.textAlign = 'right';
     for (let g = 0; g <= 4; g++) ctx.fillText((yMin + (g / 4) * (yMax - yMin)).toFixed(2), PAD.left - 6, PAD.top + plotH - (g / 4) * plotH + 4);
-  }, [expr, xMin, xMax, includeIdentity, onDrawOverlay]);
+  }, [expr, xMin, xMax, includeIdentity, onDrawOverlay, size]);
 
   return (
-    <div>
-      <canvas ref={canvasRef} width={700} height={280}
-        style={{ width: '100%', borderRadius: 10, display: 'block', border: '1px solid var(--ifm-toc-border-color)' }}
+    <div ref={containerRef} style={{ width: '100%' }}>
+      <canvas ref={canvasRef}
+        style={{ width: '100%', height: size.height, borderRadius: 10, display: 'block', border: '1px solid var(--ifm-toc-border-color)' }}
       />
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginTop: 10, justifyContent: 'center', padding: '6px 12px', borderRadius: 8, border: '1px solid var(--ifm-toc-border-color)', background: 'var(--ifm-background-color)' }}>
         <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--ifm-font-color-base)' }}>🔍 Zoom:</span>

@@ -215,7 +215,7 @@ export default function PendulumSim() {
         </div>
 
         {/* Workspace grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: 20 }}>
+        <div className="sim-workspace-grid">
           {/* Canvas physical area */}
           <div>
             <canvas ref={canvasRef} width={650} height={320} style={{ width: '100%', height: 'auto', border: '1px solid var(--ifm-toc-border-color)', borderRadius: 12, display: 'block' }} />

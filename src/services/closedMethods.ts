@@ -9,9 +9,18 @@ export interface Iteration {
   ea: number | null;
 }
 
+export class SolverError extends Error {
+  iterations: Iteration[];
+  constructor(message: string, iterations: Iteration[]) {
+    super(message);
+    this.iterations = iterations;
+    Object.setPrototypeOf(this, SolverError.prototype);
+  }
+}
+
 /**
  * Runs closed methods (Bisection or False Position) for root-finding.
- * Throws errors if evaluation fails or sign change condition is not met.
+ * Throws SolverErrors if evaluation fails or sign change condition is not met.
  */
 export function runClosedMethod(
   method: 'biseccion' | 'falsa-posicion',
@@ -27,11 +36,11 @@ export function runClosedMethod(
   let fxb = evalFn(expr, xb);
 
   if (isNaN(fxa) || isNaN(fxb)) {
-    throw new Error('La función no se pudo evaluar en los límites del intervalo.');
+    throw new SolverError('La función no se pudo evaluar en los límites del intervalo.', iters);
   }
 
   if (fxa * fxb > 0) {
-    throw new Error('f(xa) y f(xb) tienen el mismo signo — no hay cambio de signo en el intervalo.');
+    throw new SolverError('f(xa) y f(xb) tienen el mismo signo — no hay cambio de signo en el intervalo.', iters);
   }
 
   let xr_prev: number | null = null;
@@ -43,14 +52,14 @@ export function runClosedMethod(
     } else {
       const denom = fxb - fxa;
       if (Math.abs(denom) < 1e-15) {
-        throw new Error('División por cero detectada: f(xa) y f(xb) son prácticamente iguales.');
+        throw new SolverError('División por cero detectada: f(xa) y f(xb) son prácticamente iguales.', iters);
       }
       xr = xb - (fxb * (xb - xa)) / denom;
     }
 
     const fxr = evalFn(expr, xr);
     if (isNaN(fxr)) {
-      throw new Error(`La función retornó NaN al evaluarse en xr = ${xr}`);
+      throw new SolverError(`La función retornó NaN al evaluarse en xr = ${xr}`, iters);
     }
 
     const ea = xr_prev !== null && xr !== 0 ? Math.abs((xr - xr_prev) / xr) * 100 : null;

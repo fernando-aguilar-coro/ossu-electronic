@@ -26,6 +26,7 @@ export function InputField({ label, description, style, containerStyle, ...props
         {label}
       </label>
       <input
+        className="sim-input"
         style={{
           width: '100%', padding: '9px 12px', borderRadius: 8, border: '1px solid var(--ifm-toc-border-color)',
           background: props.disabled ? (isDark ? 'rgba(30,41,59,0.5)' : '#f1f5f9') : 'var(--ifm-background-color)',

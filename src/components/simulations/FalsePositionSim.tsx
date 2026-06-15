@@ -67,8 +67,9 @@ export default function FalsePositionSim({
       const res = runClosedMethod('falsa-posicion', expr, xa, xb, es, imax);
       setIterations(res);
     } catch (e) {
-      setError((e as Error).message);
-      setIterations([]);
+      const err = e as any;
+      setError(err.message);
+      setIterations(err.iterations || []);
     }
   }, [expr, xaStr, xbStr, esStr, imaxStr, reset]);
 
@@ -281,29 +282,32 @@ export default function FalsePositionSim({
           ]}
           minWidth="680px"
         >
-          {iterations.slice(0, step).map(it => (
-            <tr key={it.i} style={{ borderBottom: '1px solid var(--ifm-toc-border-color)' }}>
-              <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.i}</td>
-              <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.xa.toFixed(6)}</td>
-              <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{evalFn(expr, it.xa).toExponential(3)}</td>
-              <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.xb.toFixed(6)}</td>
-              <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{evalFn(expr, it.xb).toExponential(3)}</td>
-              <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', color: '#f59e0b', fontWeight: 700, fontSize: 13 }}>{it.xr.toFixed(6)}</td>
-              <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.fxr.toExponential(3)}</td>
-              <td
-                style={{
-                  padding: '8px 14px',
-                  fontFamily: 'monospace',
-                  textAlign: 'right',
-                  fontSize: 13,
-                  color: it.ea != null && it.ea < parseFloat(esStr) ? '#10b981' : undefined,
-                  fontWeight: it.ea != null && it.ea < parseFloat(esStr) ? 700 : 400,
-                }}
-              >
-                {it.ea != null ? it.ea.toFixed(4) : '—'}
-              </td>
-            </tr>
-          ))}
+          {iterations.slice(0, step).map(it => {
+            const isConverged = it.ea != null && it.ea < parseFloat(esStr);
+            return (
+              <tr key={it.i} className={isConverged ? 'converged-row' : ''} style={{ borderBottom: '1px solid var(--ifm-toc-border-color)' }}>
+                <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.i}</td>
+                <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.xa.toFixed(6)}</td>
+                <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{evalFn(expr, it.xa).toExponential(3)}</td>
+                <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.xb.toFixed(6)}</td>
+                <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{evalFn(expr, it.xb).toExponential(3)}</td>
+                <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', color: '#f59e0b', fontWeight: 700, fontSize: 13 }}>{it.xr.toFixed(6)}</td>
+                <td style={{ padding: '8px 14px', fontFamily: 'monospace', textAlign: 'right', fontSize: 13 }}>{it.fxr.toExponential(3)}</td>
+                <td
+                  style={{
+                    padding: '8px 14px',
+                    fontFamily: 'monospace',
+                    textAlign: 'right',
+                    fontSize: 13,
+                    color: it.ea != null && it.ea < parseFloat(esStr) ? '#10b981' : undefined,
+                    fontWeight: it.ea != null && it.ea < parseFloat(esStr) ? 700 : 400,
+                  }}
+                >
+                  {it.ea != null ? it.ea.toFixed(4) : '—'}
+                </td>
+              </tr>
+            );
+          })}
         </SimulationTable>
       )}
     </div>

@@ -465,8 +465,17 @@
   border: 1px solid rgba(99, 102, 241, 0.18);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: fit-content;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 100%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tabsNav::-webkit-scrollbar {
+  display: none;
 }
 
 [data-theme='light'] .tabsNav {

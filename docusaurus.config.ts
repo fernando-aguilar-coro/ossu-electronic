@@ -19,7 +19,7 @@ const config: Config = {
   url: 'http://localhost:3000',
   baseUrl: '/',
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: process.env.NODE_ENV === 'production' ? 'throw' : 'warn',
 
   markdown: {
     format: 'mdx',

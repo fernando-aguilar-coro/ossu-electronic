@@ -579,7 +579,7 @@ export default function CircuitSim() {
         </div>
 
         {/* Zona Principal de Trabajo */}
-        <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: 20 }}>
+        <div className="sim-workspace-grid">
           {/* Lienzo Canvas interactivo */}
           <div>
             <canvas

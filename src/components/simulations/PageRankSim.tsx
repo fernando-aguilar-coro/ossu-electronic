@@ -135,16 +135,45 @@ export default function PageRankSim() {
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    if (draggedNode === null || mode !== 'select') return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const rect = canvas.getBoundingClientRect();
     
     // Scale client mouse coordinates to match internal canvas resolution
-    const x = Math.max(20, Math.min(canvas.width - 20, (e.clientX - rect.left) * (canvas.width / rect.width)));
-    const y = Math.max(20, Math.min(canvas.height - 20, (e.clientY - rect.top) * (canvas.height / rect.height)));
+    const x = (e.clientX - rect.left) * (canvas.width / rect.width);
+    const y = (e.clientY - rect.top) * (canvas.height / rect.height);
 
-    setNodes(prev => prev.map(n => n.id === draggedNode ? { ...n, x, y } : n));
+    if (draggedNode !== null && mode === 'select') {
+      const clampedX = Math.max(20, Math.min(canvas.width - 20, x));
+      const clampedY = Math.max(20, Math.min(canvas.height - 20, y));
+      setNodes(prev => prev.map(n => n.id === draggedNode ? { ...n, x: clampedX, y: clampedY } : n));
+      canvas.style.cursor = 'grabbing';
+      return;
+    }
+
+    // Check if hovering over any node
+    const isHoveringNode = nodes.some(n => {
+      const dx = n.x - x;
+      const dy = n.y - y;
+      const radius = 15 + n.rank * 60;
+      return Math.sqrt(dx * dx + dy * dy) < Math.max(radius, 22);
+    });
+
+    if (isHoveringNode) {
+      if (mode === 'delete') {
+        canvas.style.cursor = 'no-drop';
+      } else if (mode === 'add-link') {
+        canvas.style.cursor = 'crosshair';
+      } else {
+        canvas.style.cursor = 'pointer';
+      }
+    } else {
+      if (mode === 'add-node') {
+        canvas.style.cursor = 'copy';
+      } else if (mode === 'select') {
+        canvas.style.cursor = 'default';
+      }
+    }
   };
 
   const handleMouseUp = () => {
@@ -182,12 +211,12 @@ export default function PageRankSim() {
     const textColor = isDark ? '#cbd5e1' : '#334155';
     const linkColor = isDark ? 'rgba(148, 163, 184, 0.55)' : 'rgba(100, 116, 139, 0.45)';
 
-    const render = () => {
+    const render = (dt: number) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = bgColor;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      particlesOffset.current += 1.2;
+      particlesOffset.current += 1.2 * dt;
 
       // Draw engineering grid lines
       ctx.strokeStyle = isDark ? 'rgba(99,102,241,0.04)' : 'rgba(0,0,0,0.02)';
@@ -298,11 +327,15 @@ export default function PageRankSim() {
       });
     };
 
-    const loop = () => {
-      render();
+    let lastTime = performance.now();
+    const loop = (now: number) => {
+      const dt = (now - lastTime) / 16.666;
+      lastTime = now;
+      const normalizedDt = isFinite(dt) && dt > 0 ? dt : 1.0;
+      render(normalizedDt);
       animationRef.current = requestAnimationFrame(loop);
     };
-    loop();
+    animationRef.current = requestAnimationFrame(loop);
 
     return () => cancelAnimationFrame(animationRef.current);
   }, [nodes, links, linkStart, mode]);
@@ -344,7 +377,7 @@ export default function PageRankSim() {
         </div>
 
         {/* Workspace */}
-        <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: 20 }}>
+        <div className="sim-workspace-grid">
           {/* Canvas editor */}
           <div>
             <canvas
